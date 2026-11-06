@@ -1,0 +1,262 @@
+[
+  {
+    "name": "iconGlyph ph_activity",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "ph_activity"
+      ]
+    },
+    "expected": {
+      "icon": "ph_activity",
+      "iconCodePoint": 57344,
+      "iconFont": "phosphorBold"
+    }
+  },
+  {
+    "name": "iconGlyph ph_star",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "ph_star"
+      ]
+    },
+    "expected": {
+      "icon": "ph_star",
+      "iconCodePoint": 58474,
+      "iconFont": "phosphorBold"
+    }
+  },
+  {
+    "name": "iconGlyph bolt",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "bolt"
+      ]
+    },
+    "expected": {
+      "icon": "bolt",
+      "iconCodePoint": 62922,
+      "iconFont": "material"
+    }
+  },
+  {
+    "name": "iconGlyph trending_up",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "trending_up"
+      ]
+    },
+    "expected": {
+      "icon": "trending_up",
+      "iconCodePoint": 983636,
+      "iconFont": "material"
+    }
+  },
+  {
+    "name": "iconGlyph chart",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "chart"
+      ]
+    },
+    "expected": {
+      "icon": "chart",
+      "iconCodePoint": 62889,
+      "iconFont": "material"
+    }
+  },
+  {
+    "name": "iconGlyph dev_react_original",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "dev_react_original"
+      ]
+    },
+    "expected": {
+      "icon": "dev_react_original",
+      "iconCodePoint": 59393,
+      "iconFont": "devicon"
+    }
+  },
+  {
+    "name": "iconGlyph simple_github",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "simple_github"
+      ]
+    },
+    "expected": {
+      "icon": "simple_github",
+      "iconCodePoint": 61022,
+      "iconFont": "simpleIcons"
+    }
+  },
+  {
+    "name": "iconGlyph ph_githubLogo",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "ph_githubLogo"
+      ]
+    },
+    "expected": {
+      "icon": "ph_githubLogo",
+      "iconCodePoint": 58742,
+      "iconFont": "phosphorBold"
+    }
+  },
+  {
+    "name": "icon layer by name fills the glyph triple",
+    "call": {
+      "fn": "icon",
+      "args": [
+        {
+          "id": "i",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "name": "ph_star"
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:i",
+          "type": "icon",
+          "dataPath": "data.layer_i"
+        }
+      ],
+      "data": {
+        "layer_i": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "content": {
+            "icon": "ph_star",
+            "iconCodePoint": 58474,
+            "iconFont": "phosphorBold"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "icon layer by material name",
+    "call": {
+      "fn": "icon",
+      "args": [
+        {
+          "id": "i",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "name": "bolt",
+          "style": {
+            "color": "#FFCC00"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:i",
+          "type": "icon",
+          "dataPath": "data.layer_i"
+        }
+      ],
+      "data": {
+        "layer_i": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "content": {
+            "icon": "bolt",
+            "iconCodePoint": 62922,
+            "iconFont": "material"
+          },
+          "style": {
+            "color": "#FFCC00",
+            "textOpacity": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "icon layer name and glyph together throws",
+    "call": {
+      "fn": "icon",
+      "args": [
+        {
+          "id": "i",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "name": "bolt",
+          "glyph": {
+            "icon": "bolt",
+            "iconCodePoint": 62922,
+            "iconFont": "material"
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "unknown icon name throws",
+    "call": {
+      "fn": "iconGlyph",
+      "args": [
+        "no_such_icon"
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "icon layer with unknown name throws",
+    "call": {
+      "fn": "icon",
+      "args": [
+        {
+          "id": "i",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "name": "no_such_icon"
+        }
+      ]
+    },
+    "throws": true
+  }
+]

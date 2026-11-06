@@ -1,0 +1,558 @@
+[
+  {
+    "name": "three of four bars",
+    "call": {
+      "fn": "signal",
+      "args": [
+        75,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "frame": {
+            "left": 0.3,
+            "top": 0.3,
+            "width": 0.4,
+            "height": 0.3
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:signal:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:signal:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:signal:bar-2",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_2"
+        },
+        {
+          "id": "remote:signal:bar-3",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_3"
+        }
+      ],
+      "data": {
+        "layer_signal_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.301519,
+            "top": 0.462785,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.336076,
+            "top": 0.455612,
+            "width": 0.02,
+            "height": 0.027173
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_2": {
+          "frame": {
+            "left": 0.370633,
+            "top": 0.436414,
+            "width": 0.02,
+            "height": 0.046371
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_3": {
+          "frame": {
+            "left": 0.40519,
+            "top": 0.417215,
+            "width": 0.02,
+            "height": 0.06557
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "five bars, none lit",
+    "call": {
+      "fn": "signal",
+      "args": [
+        0,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "bars": 5,
+          "frame": {
+            "left": 0.3,
+            "top": 0.3,
+            "width": 0.4,
+            "height": 0.3
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:signal:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:signal:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:signal:bar-2",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_2"
+        },
+        {
+          "id": "remote:signal:bar-3",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_3"
+        },
+        {
+          "id": "remote:signal:bar-4",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_4"
+        }
+      ],
+      "data": {
+        "layer_signal_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.301519,
+            "top": 0.462785,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.336076,
+            "top": 0.460411,
+            "width": 0.02,
+            "height": 0.022373
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_2": {
+          "frame": {
+            "left": 0.370633,
+            "top": 0.446013,
+            "width": 0.02,
+            "height": 0.036772
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_3": {
+          "frame": {
+            "left": 0.40519,
+            "top": 0.431614,
+            "width": 0.02,
+            "height": 0.051171
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_4": {
+          "frame": {
+            "left": 0.439747,
+            "top": 0.417215,
+            "width": 0.02,
+            "height": 0.06557
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "all lit with custom colors",
+    "call": {
+      "fn": "signal",
+      "args": [
+        100,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "frame": {
+            "left": 0.3,
+            "top": 0.3,
+            "width": 0.4,
+            "height": 0.3
+          },
+          "colors": {
+            "fill": "#34C759"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:signal:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:signal:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:signal:bar-2",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_2"
+        },
+        {
+          "id": "remote:signal:bar-3",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_3"
+        }
+      ],
+      "data": {
+        "layer_signal_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.301519,
+            "top": 0.462785,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.336076,
+            "top": 0.455612,
+            "width": 0.02,
+            "height": 0.027173
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_2": {
+          "frame": {
+            "left": 0.370633,
+            "top": 0.436414,
+            "width": 0.02,
+            "height": 0.046371
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_3": {
+          "frame": {
+            "left": 0.40519,
+            "top": 0.417215,
+            "width": 0.02,
+            "height": 0.06557
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 3.64,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "bar width above 8 throws",
+    "call": {
+      "fn": "signal",
+      "args": [
+        50,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "barWidth": 9
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "explicit height and bar width",
+    "call": {
+      "fn": "signal",
+      "args": [
+        50,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "height": 20,
+          "barWidth": 5
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:signal:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:signal:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:signal:bar-2",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_2"
+        },
+        {
+          "id": "remote:signal:bar-3",
+          "type": "line",
+          "dataPath": "data.layer_signal_3a_bar_2d_3"
+        }
+      ],
+      "data": {
+        "layer_signal_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.005823,
+            "top": 0.527468,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 5,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.053291,
+            "top": 0.507384,
+            "width": 0.02,
+            "height": 0.040084
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 5,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_2": {
+          "frame": {
+            "left": 0.100759,
+            "top": 0.479958,
+            "width": 0.02,
+            "height": 0.067511
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 5,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_signal_3a_bar_2d_3": {
+          "frame": {
+            "left": 0.148228,
+            "top": 0.452532,
+            "width": 0.02,
+            "height": 0.094937
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 5,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "height taller than the area throws",
+    "call": {
+      "fn": "signal",
+      "args": [
+        50,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.05
+          },
+          "height": 20
+        }
+      ]
+    },
+    "throws": true
+  }
+]

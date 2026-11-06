@@ -1,0 +1,569 @@
+[
+  {
+    "name": "healthy battery",
+    "call": {
+      "fn": "battery",
+      "args": [
+        80,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "frame": {
+            "left": 0.1,
+            "top": 0.3,
+            "width": 0.4,
+            "height": 0.4
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:battery:body",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_body"
+        },
+        {
+          "id": "remote:battery:tab",
+          "type": "line",
+          "dataPath": "data.layer_battery_3a_tab"
+        },
+        {
+          "id": "remote:battery:level",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_level"
+        }
+      ],
+      "data": {
+        "layer_battery_3a_body": {
+          "frame": {
+            "left": 0.1,
+            "top": 0.462025,
+            "width": 0.081657,
+            "height": 0.075949
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                6,
+                0.5
+              ],
+              [
+                21.6,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              27.6
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 12,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#8E8E93"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_tab": {
+          "frame": {
+            "left": 0.179053,
+            "top": 0.490506,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 3,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_level": {
+          "frame": {
+            "left": 0.105917,
+            "top": 0.474684,
+            "width": 0.055858,
+            "height": 0.050633
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                4,
+                0.5
+              ],
+              [
+                14.88,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              18.88
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#34C759"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "low battery with label",
+    "call": {
+      "fn": "battery",
+      "args": [
+        15,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "label": true
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:battery:body",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_body"
+        },
+        {
+          "id": "remote:battery:tab",
+          "type": "line",
+          "dataPath": "data.layer_battery_3a_tab"
+        },
+        {
+          "id": "remote:battery:level",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_level"
+        },
+        {
+          "id": "remote:battery:label",
+          "type": "text",
+          "dataPath": "data.layer_battery_3a_label"
+        }
+      ],
+      "data": {
+        "layer_battery_3a_body": {
+          "frame": {
+            "left": 0,
+            "top": 0.462025,
+            "width": 0.081657,
+            "height": 0.075949
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                6,
+                0.5
+              ],
+              [
+                21.6,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              27.6
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 12,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#8E8E93"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_tab": {
+          "frame": {
+            "left": 0.079053,
+            "top": 0.490506,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 3,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_level": {
+          "frame": {
+            "left": 0.005917,
+            "top": 0.474684,
+            "width": 0.023817,
+            "height": 0.050633
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                4,
+                0.5
+              ],
+              [
+                4.05,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              8.05
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#FF453A",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#FF453A"
+          },
+          "zIndex": 1
+        },
+        "layer_battery_3a_label": {
+          "frame": {
+            "left": 0.948746,
+            "top": 0,
+            "width": 0.051254,
+            "height": 1
+          },
+          "content": {
+            "text": "15%"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1,
+            "opacity": 0,
+            "fontSizeRatio": 0.042194092827004225,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "warn level, custom colors",
+    "call": {
+      "fn": "battery",
+      "args": [
+        35,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "height": 10,
+          "width": 30,
+          "colors": {
+            "warn": "#FFD60A",
+            "track": "#AAAAAA"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:battery:body",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_body"
+        },
+        {
+          "id": "remote:battery:tab",
+          "type": "line",
+          "dataPath": "data.layer_battery_3a_tab"
+        },
+        {
+          "id": "remote:battery:level",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_level"
+        }
+      ],
+      "data": {
+        "layer_battery_3a_body": {
+          "frame": {
+            "left": 0,
+            "top": 0.468354,
+            "width": 0.088757,
+            "height": 0.063291
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                5,
+                0.5
+              ],
+              [
+                25,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              30
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#AAAAAA",
+            "opacity": 0.3,
+            "strokeWidth": 10,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#AAAAAA"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_tab": {
+          "frame": {
+            "left": 0.085414,
+            "top": 0.492089,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#AAAAAA",
+            "opacity": 0.3,
+            "strokeWidth": 2.5,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_level": {
+          "frame": {
+            "left": 0.005917,
+            "top": 0.481013,
+            "width": 0.026923,
+            "height": 0.037975
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                3,
+                0.5
+              ],
+              [
+                6.1,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              9.1
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#FFD60A",
+            "opacity": 1,
+            "strokeWidth": 6,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#FFD60A"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "empty battery has no level layer",
+    "call": {
+      "fn": "battery",
+      "args": [
+        0,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:battery:body",
+          "type": "curve",
+          "dataPath": "data.layer_battery_3a_body"
+        },
+        {
+          "id": "remote:battery:tab",
+          "type": "line",
+          "dataPath": "data.layer_battery_3a_tab"
+        }
+      ],
+      "data": {
+        "layer_battery_3a_body": {
+          "frame": {
+            "left": 0,
+            "top": 0.462025,
+            "width": 0.081657,
+            "height": 0.075949
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                6,
+                0.5
+              ],
+              [
+                21.6,
+                0.5
+              ]
+            ],
+            "domain": [
+              0,
+              27.6
+            ],
+            "yDomain": [
+              0,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 12,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#8E8E93"
+          },
+          "zIndex": 0
+        },
+        "layer_battery_3a_tab": {
+          "frame": {
+            "left": 0.079053,
+            "top": 0.490506,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 3,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "area under 24 pt high throws",
+    "call": {
+      "fn": "battery",
+      "args": [
+        50,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.05
+          }
+        }
+      ]
+    },
+    "throws": true
+  }
+]

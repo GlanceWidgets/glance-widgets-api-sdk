@@ -1,0 +1,715 @@
+[
+  {
+    "name": "positive values with categories",
+    "call": {
+      "fn": "barChart",
+      "args": [
+        [
+          3,
+          5,
+          2,
+          8,
+          4
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "categories": [
+            "M",
+            "T",
+            "W",
+            "T",
+            "F"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:barChart:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:barChart:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:barChart:bar-2",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_2"
+        },
+        {
+          "id": "remote:barChart:bar-3",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_3"
+        },
+        {
+          "id": "remote:barChart:bar-4",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_4"
+        },
+        {
+          "id": "remote:barChart:baseline",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_baseline"
+        },
+        {
+          "id": "remote:barChart:category-0",
+          "type": "text",
+          "dataPath": "data.layer_barChart_3a_category_2d_0"
+        },
+        {
+          "id": "remote:barChart:category-1",
+          "type": "text",
+          "dataPath": "data.layer_barChart_3a_category_2d_1"
+        },
+        {
+          "id": "remote:barChart:category-2",
+          "type": "text",
+          "dataPath": "data.layer_barChart_3a_category_2d_2"
+        },
+        {
+          "id": "remote:barChart:category-3",
+          "type": "text",
+          "dataPath": "data.layer_barChart_3a_category_2d_3"
+        },
+        {
+          "id": "remote:barChart:category-4",
+          "type": "text",
+          "dataPath": "data.layer_barChart_3a_category_2d_4"
+        }
+      ],
+      "data": {
+        "layer_barChart_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.09,
+            "top": 0.586361,
+            "width": 0.02,
+            "height": 0.285994
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.29,
+            "top": 0.361943,
+            "width": 0.02,
+            "height": 0.510411
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_2": {
+          "frame": {
+            "left": 0.49,
+            "top": 0.69857,
+            "width": 0.02,
+            "height": 0.173785
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_3": {
+          "frame": {
+            "left": 0.69,
+            "top": 0.025316,
+            "width": 0.02,
+            "height": 0.847038
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_4": {
+          "frame": {
+            "left": 0.89,
+            "top": 0.474152,
+            "width": 0.02,
+            "height": 0.398203
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_baseline": {
+          "frame": {
+            "left": 0,
+            "top": 0.887671,
+            "width": 1,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_category_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0.921671,
+            "width": 0.2,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "M"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_category_2d_1": {
+          "frame": {
+            "left": 0.2,
+            "top": 0.921671,
+            "width": 0.2,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "T"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_category_2d_2": {
+          "frame": {
+            "left": 0.4,
+            "top": 0.921671,
+            "width": 0.2,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "W"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_category_2d_3": {
+          "frame": {
+            "left": 0.6,
+            "top": 0.921671,
+            "width": 0.2,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "T"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_category_2d_4": {
+          "frame": {
+            "left": 0.8,
+            "top": 0.921671,
+            "width": 0.2,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "F"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "signed values around a baseline",
+    "call": {
+      "fn": "barChart",
+      "args": [
+        [
+          5,
+          -3,
+          8,
+          -6,
+          2,
+          0
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "colors": {
+            "positive": "#34C759"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:barChart:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:barChart:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:barChart:bar-2",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_2"
+        },
+        {
+          "id": "remote:barChart:bar-3",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_3"
+        },
+        {
+          "id": "remote:barChart:bar-4",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_4"
+        },
+        {
+          "id": "remote:barChart:baseline",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_baseline"
+        }
+      ],
+      "data": {
+        "layer_barChart_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.073333,
+            "top": 0.239602,
+            "width": 0.02,
+            "height": 0.30651
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.24,
+            "top": 0.596745,
+            "width": 0.02,
+            "height": 0.163653
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FF453A",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_2": {
+          "frame": {
+            "left": 0.406667,
+            "top": 0.025316,
+            "width": 0.02,
+            "height": 0.520796
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_3": {
+          "frame": {
+            "left": 0.573333,
+            "top": 0.596745,
+            "width": 0.02,
+            "height": 0.377939
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FF453A",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_4": {
+          "frame": {
+            "left": 0.74,
+            "top": 0.453888,
+            "width": 0.02,
+            "height": 0.092224
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_baseline": {
+          "frame": {
+            "left": 0,
+            "top": 0.561429,
+            "width": 1,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "fixed range clamps, no baseline",
+    "call": {
+      "fn": "barChart",
+      "args": [
+        [
+          120,
+          40
+        ],
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "min": 0,
+          "max": 100,
+          "showBaseline": false,
+          "barWidth": 6
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:barChart:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:barChart:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_1"
+        }
+      ],
+      "data": {
+        "layer_barChart_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.24,
+            "top": 0.018987,
+            "width": 0.02,
+            "height": 0.962025
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.74,
+            "top": 0.618987,
+            "width": 0.02,
+            "height": 0.362025
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "tiny value keeps one round cap",
+    "call": {
+      "fn": "barChart",
+      "args": [
+        [
+          0.01,
+          10
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:barChart:bar-0",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_0"
+        },
+        {
+          "id": "remote:barChart:bar-1",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_bar_2d_1"
+        },
+        {
+          "id": "remote:barChart:baseline",
+          "type": "line",
+          "dataPath": "data.layer_barChart_3a_baseline"
+        }
+      ],
+      "data": {
+        "layer_barChart_3a_bar_2d_0": {
+          "frame": {
+            "left": 0.24,
+            "top": 0.954684,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_bar_2d_1": {
+          "frame": {
+            "left": 0.74,
+            "top": 0.025316,
+            "width": 0.02,
+            "height": 0.949367
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_barChart_3a_baseline": {
+          "frame": {
+            "left": 0,
+            "top": 0.99,
+            "width": 1,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "categories must match values",
+    "call": {
+      "fn": "barChart",
+      "args": [
+        [
+          1,
+          2
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "categories": [
+            "a"
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "no values throws",
+    "call": {
+      "fn": "barChart",
+      "args": [
+        [],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "throws": true
+  }
+]

@@ -1,0 +1,1017 @@
+[
+  {
+    "name": "empty default, single color shorthand is inlined",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 2,
+          "ops": [
+            [
+              "set",
+              1,
+              0,
+              "#f00"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          {
+            "color": "#FF0000",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          null
+        ],
+        [
+          null,
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "repeated style becomes batch, coordinates are [row, col]",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 3,
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              "#FF0000"
+            ],
+            [
+              "set",
+              3,
+              2,
+              "#FF0000"
+            ],
+            [
+              "set",
+              1,
+              1,
+              {
+                "color": "#00FF00",
+                "opacity": 0.5
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "color": "#00FF00",
+            "opacity": 0.5,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      },
+      "batch": [
+        {
+          "pixel": {
+            "color": "#FF0000",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          "coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "cells equal to a visible default become null",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 2,
+          "options": {
+            "default": {
+              "color": "#0A2D48",
+              "opacity": 0.3,
+              "cornerRadius": 0.2
+            }
+          },
+          "ops": [
+            [
+              "fill",
+              "#0A2D48"
+            ],
+            [
+              "set",
+              2,
+              1,
+              "#FFFFFF"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "empty"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "empty": true
+          },
+          null,
+          {
+            "color": "#FFFFFF",
+            "opacity": 0.3,
+            "cornerRadius": 0.2,
+            "rotation": 0,
+            "halo": 0
+          }
+        ]
+      ],
+      "default": {
+        "color": "#0A2D48",
+        "opacity": 0.3,
+        "cornerRadius": 0.2,
+        "rotation": 0,
+        "halo": 0
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "base style controls shorthand; layout gap ratios exported",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 2,
+          "rows": 2,
+          "options": {
+            "base": {
+              "opacity": 0.8,
+              "cornerRadius": 0.5
+            },
+            "layout": {
+              "gapMode": "near",
+              "columnGapRatio": 0.3,
+              "rowGapRatio": 0.1,
+              "cellAspectRatio": 2
+            }
+          },
+          "ops": [
+            [
+              "line",
+              0,
+              0,
+              1,
+              1,
+              "#ABCDEF"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "near",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 2,
+        "columnGapRatio": 0.3,
+        "rowGapRatio": 0.1
+      },
+      "batch": [
+        {
+          "pixel": {
+            "color": "#ABCDEF",
+            "opacity": 0.8,
+            "cornerRadius": 0.5,
+            "rotation": 0,
+            "halo": 0
+          },
+          "coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "line and outline rect are clipped",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 4,
+          "ops": [
+            [
+              "line",
+              -2,
+              0,
+              6,
+              3,
+              "#FFFFFF"
+            ],
+            [
+              "rect",
+              3,
+              2,
+              4,
+              4,
+              "#80FF0000",
+              {
+                "fill": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      },
+      "batch": [
+        {
+          "pixel": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          "coordinates": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "pixel": {
+            "color": "#80FF0000",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          "coordinates": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "blit skips unset and empty cells",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 2,
+          "ops": [
+            [
+              "fill",
+              "#111111"
+            ],
+            [
+              "blit",
+              {
+                "columns": 2,
+                "rows": 2,
+                "ops": [
+                  [
+                    "set",
+                    0,
+                    0,
+                    "#222222"
+                  ],
+                  [
+                    "set",
+                    1,
+                    1,
+                    "empty"
+                  ]
+                ]
+              },
+              1,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          {
+            "color": "#222222",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      },
+      "batch": [
+        {
+          "pixel": {
+            "color": "#111111",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          },
+          "coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "clear resets to default",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 2,
+          "rows": 1,
+          "ops": [
+            [
+              "fill",
+              "#123456"
+            ],
+            [
+              "clear"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "values are clamped to App ranges",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1,
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              {
+                "color": "#FFF",
+                "opacity": 3,
+                "cornerRadius": 0.9,
+                "halo": -1,
+                "rotation": 45
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "cornerRadius": 0.5,
+            "rotation": 45,
+            "halo": 0
+          }
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "part mirrors base style and layout",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 1,
+          "export": "part",
+          "options": {
+            "layout": {
+              "gapMode": "far"
+            }
+          },
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              "#FF0000"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "content": {
+        "pixels": [
+          [
+            {
+              "color": "#FF0000",
+              "opacity": 1,
+              "cornerRadius": 0,
+              "rotation": 0,
+              "halo": 0
+            },
+            null,
+            null
+          ]
+        ],
+        "default": {
+          "empty": true
+        },
+        "layout": {
+          "gapMode": "far",
+          "edgeInsetRatio": 0,
+          "cellAspectRatio": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "part with visible default",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 2,
+          "rows": 1,
+          "export": "part",
+          "options": {
+            "default": "#336699"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "content": {
+        "pixels": [
+          [
+            null,
+            null
+          ]
+        ],
+        "default": {
+          "color": "#336699",
+          "opacity": 1,
+          "cornerRadius": 0,
+          "rotation": 0,
+          "halo": 0
+        },
+        "layout": {
+          "gapMode": "default",
+          "edgeInsetRatio": 0,
+          "cellAspectRatio": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "set out of bounds throws",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 2,
+          "rows": 2,
+          "ops": [
+            [
+              "set",
+              2,
+              0,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "more than 4096 cells throws",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 65,
+          "rows": 64
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "invalid color throws",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1,
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              "red"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "unknown layout keys are ignored",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1,
+          "options": {
+            "layout": {
+              "unknown": "ignored"
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "integer-valued floating drawing coordinates and sizes",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 4,
+          "export": "ascii",
+          "ops": [
+            [
+              "rect",
+              0,
+              0,
+              2,
+              2,
+              "#F00"
+            ],
+            [
+              "ellipse",
+              1,
+              1,
+              3,
+              3,
+              "#0F0"
+            ],
+            [
+              "roundRect",
+              0,
+              0,
+              4,
+              4,
+              1,
+              "#00F",
+              {
+                "fill": false
+              }
+            ],
+            [
+              "arc",
+              1,
+              1,
+              1,
+              0,
+              90,
+              "#FFF"
+            ],
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "#333"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": [
+      "##AB",
+      "#CAB",
+      "BCCB",
+      "BBBB"
+    ]
+  },
+  {
+    "name": "explicit null pixel opacity is rejected",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1,
+          "options": {
+            "base": {
+              "opacity": null
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "null layout aspect uses the default",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1,
+          "options": {
+            "layout": {
+              "cellAspectRatio": null
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "matrix layout prototype key gapMode throws",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 2,
+          "options": {
+            "layout": {
+              "gapMode": "toString"
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "matrix null layout default and rect fill are unset",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 3,
+          "theme": "led",
+          "options": {
+            "default": null,
+            "layout": null
+          },
+          "ops": [
+            [
+              "rect",
+              0,
+              0,
+              3,
+              3,
+              "#ffffff",
+              {
+                "fill": null
+              }
+            ],
+            [
+              "roundRect",
+              0,
+              0,
+              3,
+              3,
+              1,
+              "#ff0000",
+              {
+                "fill": null
+              }
+            ],
+            [
+              "ellipse",
+              0,
+              0,
+              3,
+              3,
+              "#00ff00",
+              {
+                "fill": null
+              }
+            ],
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  2
+                ]
+              ],
+              "#0000ff",
+              {
+                "fill": null
+              }
+            ],
+            [
+              "text",
+              "A",
+              0,
+              0,
+              {
+                "font": null,
+                "letterSpacing": null
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#A##",
+      "A#A#",
+      "AAA#"
+    ]
+  }
+]

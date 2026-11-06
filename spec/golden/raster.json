@@ -1,0 +1,2652 @@
+[
+  {
+    "name": "circle r0 is one cell",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 3,
+          "ops": [
+            [
+              "circle",
+              1,
+              1,
+              0,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...",
+      ".#.",
+      "..."
+    ]
+  },
+  {
+    "name": "circle r1 filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "circle",
+              2,
+              2,
+              1,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....",
+      ".###.",
+      ".###.",
+      ".###.",
+      "....."
+    ]
+  },
+  {
+    "name": "circle r2 filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 7,
+          "rows": 7,
+          "ops": [
+            [
+              "circle",
+              3,
+              3,
+              2,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".......",
+      "..###..",
+      ".#####.",
+      ".#####.",
+      ".#####.",
+      "..###..",
+      "......."
+    ]
+  },
+  {
+    "name": "circle r3 outline",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 9,
+          "ops": [
+            [
+              "circle",
+              4,
+              4,
+              3,
+              "#FFFFFF",
+              {
+                "fill": false
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".........",
+      "...###...",
+      "..#...#..",
+      ".#.....#.",
+      ".#.....#.",
+      ".#.....#.",
+      "..#...#..",
+      "...###...",
+      "........."
+    ]
+  },
+  {
+    "name": "circle r5 filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 13,
+          "rows": 13,
+          "ops": [
+            [
+              "circle",
+              6,
+              6,
+              5,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".............",
+      "....#####....",
+      "...#######...",
+      "..#########..",
+      ".###########.",
+      ".###########.",
+      ".###########.",
+      ".###########.",
+      ".###########.",
+      "..#########..",
+      "...#######...",
+      "....#####....",
+      "............."
+    ]
+  },
+  {
+    "name": "circle r5 outline",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 13,
+          "rows": 13,
+          "ops": [
+            [
+              "circle",
+              6,
+              6,
+              5,
+              "#FFFFFF",
+              {
+                "fill": false
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".............",
+      "....#####....",
+      "...#.....#...",
+      "..#.......#..",
+      ".#.........#.",
+      ".#.........#.",
+      ".#.........#.",
+      ".#.........#.",
+      ".#.........#.",
+      "..#.......#..",
+      "...#.....#...",
+      "....#####....",
+      "............."
+    ]
+  },
+  {
+    "name": "circle clipped by the corner",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "circle",
+              0,
+              0,
+              3,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "####.",
+      "####.",
+      "###..",
+      "##...",
+      "....."
+    ]
+  },
+  {
+    "name": "circle fully outside draws nothing",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "circle",
+              20,
+              20,
+              3,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....",
+      ".....",
+      ".....",
+      ".....",
+      "....."
+    ]
+  },
+  {
+    "name": "ellipse even size 8x6",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 8,
+          "rows": 6,
+          "ops": [
+            [
+              "ellipse",
+              0,
+              0,
+              8,
+              6,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "..####..",
+      ".######.",
+      "########",
+      "########",
+      ".######.",
+      "..####.."
+    ]
+  },
+  {
+    "name": "ellipse wide outline 13x5",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 13,
+          "rows": 5,
+          "ops": [
+            [
+              "ellipse",
+              0,
+              0,
+              13,
+              5,
+              "#FFFFFF",
+              {
+                "fill": false
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...#######...",
+      ".##.......##.",
+      "#...........#",
+      ".##.......##.",
+      "...#######..."
+    ]
+  },
+  {
+    "name": "ellipse tall 5x11 filled at offset",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 8,
+          "rows": 12,
+          "ops": [
+            [
+              "ellipse",
+              2,
+              0,
+              5,
+              11,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...###..",
+      "...###..",
+      "..#####.",
+      "..#####.",
+      "..#####.",
+      "..#####.",
+      "..#####.",
+      "..#####.",
+      "..#####.",
+      "...###..",
+      "...###..",
+      "........"
+    ]
+  },
+  {
+    "name": "ellipse 1x1",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 2,
+          "rows": 2,
+          "ops": [
+            [
+              "ellipse",
+              1,
+              1,
+              1,
+              1,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "..",
+      ".#"
+    ]
+  },
+  {
+    "name": "roundRect radius 3 filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 7,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              9,
+              7,
+              3,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".#######.",
+      "#########",
+      "#########",
+      "#########",
+      "#########",
+      "#########",
+      ".#######."
+    ]
+  },
+  {
+    "name": "roundRect radius 3 outline",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 7,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              9,
+              7,
+              3,
+              "#FFFFFF",
+              {
+                "fill": false
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".#######.",
+      "#.......#",
+      "#.......#",
+      "#.......#",
+      "#.......#",
+      "#.......#",
+      ".#######."
+    ]
+  },
+  {
+    "name": "roundRect radius 2 cuts one cell per corner",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 5,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              6,
+              5,
+              2,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".####.",
+      "######",
+      "######",
+      "######",
+      ".####."
+    ]
+  },
+  {
+    "name": "roundRect radius 1 equals rect",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 4,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              5,
+              4,
+              1,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#####",
+      "#####",
+      "#####",
+      "#####"
+    ]
+  },
+  {
+    "name": "roundRect radius is clamped to half the short side",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 8,
+          "rows": 4,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              8,
+              4,
+              9,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".######.",
+      "########",
+      "########",
+      ".######."
+    ]
+  },
+  {
+    "name": "roundRect radius 0 outline",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 4,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              6,
+              4,
+              0,
+              "#FFFFFF",
+              {
+                "fill": false
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "######",
+      "#....#",
+      "#....#",
+      "######"
+    ]
+  },
+  {
+    "name": "arc quarter ring (top right)",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              0,
+              90,
+              "#FFFFFF",
+              {
+                "thickness": 2
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....###...",
+      ".....####..",
+      ".......###.",
+      "........###",
+      ".........##",
+      ".........##",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "..........."
+    ]
+  },
+  {
+    "name": "arc half ring right side",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              0,
+              180,
+              "#FFFFFF",
+              {
+                "thickness": 2
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....###...",
+      ".....####..",
+      ".......###.",
+      "........###",
+      ".........##",
+      ".........##",
+      ".........##",
+      "........###",
+      ".......###.",
+      ".....####..",
+      ".....###..."
+    ]
+  },
+  {
+    "name": "arc three quarters ring",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              0,
+              270,
+              "#FFFFFF",
+              {
+                "thickness": 2
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....###...",
+      ".....####..",
+      ".......###.",
+      "........###",
+      ".........##",
+      "##.......##",
+      "##.......##",
+      "###.....###",
+      ".###...###.",
+      "..#######..",
+      "...#####..."
+    ]
+  },
+  {
+    "name": "arc progress ring 30 percent",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 13,
+          "rows": 13,
+          "ops": [
+            [
+              "arc",
+              6,
+              6,
+              6,
+              0,
+              108,
+              "#00FF00",
+              {
+                "thickness": 2
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "......###....",
+      "......#####..",
+      ".........###.",
+      "..........##.",
+      "...........##",
+      "...........##",
+      "...........##",
+      "...........##",
+      ".............",
+      ".............",
+      ".............",
+      ".............",
+      "............."
+    ]
+  },
+  {
+    "name": "arc progress ring over a track",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 13,
+          "rows": 13,
+          "ops": [
+            [
+              "arc",
+              6,
+              6,
+              6,
+              0,
+              360,
+              "#333333",
+              {
+                "thickness": 2
+              }
+            ],
+            [
+              "arc",
+              6,
+              6,
+              6,
+              0,
+              270,
+              "#00FF00",
+              {
+                "thickness": 2
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "....##AAA....",
+      "..####AAAAA..",
+      ".###.....AAA.",
+      ".##.......AA.",
+      "##.........AA",
+      "##.........AA",
+      "AA.........AA",
+      "AA.........AA",
+      "AA.........AA",
+      ".AA.......AA.",
+      ".AAA.....AAA.",
+      "..AAAAAAAAA..",
+      "....AAAAA...."
+    ]
+  },
+  {
+    "name": "arc starting at 9 o clock",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              -90,
+              90,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...#####...",
+      "..#.....#..",
+      ".#.......#.",
+      "#.........#",
+      "#.........#",
+      "#.........#",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "..........."
+    ]
+  },
+  {
+    "name": "arc full turn thin ring",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              0,
+              360,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...#####...",
+      "..#.....#..",
+      ".#.......#.",
+      "#.........#",
+      "#.........#",
+      "#.........#",
+      "#.........#",
+      "#.........#",
+      ".#.......#.",
+      "..#.....#..",
+      "...#####..."
+    ]
+  },
+  {
+    "name": "arc sweep beyond 360 is a full ring",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 7,
+          "rows": 7,
+          "ops": [
+            [
+              "arc",
+              3,
+              3,
+              3,
+              10,
+              500,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "..###..",
+      ".#...#.",
+      "#.....#",
+      "#.....#",
+      "#.....#",
+      ".#...#.",
+      "..###.."
+    ]
+  },
+  {
+    "name": "arc thick enough to be a pie slice",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              0,
+              90,
+              "#FFFFFF",
+              {
+                "thickness": 6
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....###...",
+      ".....####..",
+      ".....#####.",
+      ".....######",
+      ".....######",
+      ".....######",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "..........."
+    ]
+  },
+  {
+    "name": "arc small sweep of 10 degrees",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              0,
+              10,
+              "#FFFFFF",
+              {
+                "thickness": 3
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....#.....",
+      ".....#.....",
+      ".....#.....",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "...........",
+      "..........."
+    ]
+  },
+  {
+    "name": "arc empty sweep draws nothing",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 7,
+          "rows": 7,
+          "ops": [
+            [
+              "arc",
+              3,
+              3,
+              3,
+              90,
+              90,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".......",
+      ".......",
+      ".......",
+      ".......",
+      ".......",
+      ".......",
+      "......."
+    ]
+  },
+  {
+    "name": "arc reversed sweep draws nothing",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 7,
+          "rows": 7,
+          "ops": [
+            [
+              "arc",
+              3,
+              3,
+              3,
+              90,
+              0,
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".......",
+      ".......",
+      ".......",
+      ".......",
+      ".......",
+      ".......",
+      "......."
+    ]
+  },
+  {
+    "name": "arc clipped by the matrix edge",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              180,
+              270,
+              "#FFFFFF",
+              {
+                "thickness": 2
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "......",
+      "......",
+      "......",
+      "......",
+      "......",
+      "##...."
+    ]
+  },
+  {
+    "name": "arc diagonal boundary at 45 degrees",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 11,
+          "ops": [
+            [
+              "arc",
+              5,
+              5,
+              5,
+              45,
+              135,
+              "#FFFFFF",
+              {
+                "thickness": 6
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...........",
+      "...........",
+      "........##.",
+      ".......####",
+      "......#####",
+      ".....######",
+      "......#####",
+      ".......####",
+      "........##.",
+      "...........",
+      "..........."
+    ]
+  },
+  {
+    "name": "polygon triangle filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 8,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  4,
+                  6
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".........",
+      ".#######.",
+      "..#####..",
+      "..#####..",
+      "...###...",
+      "...#.#...",
+      "....#....",
+      "........."
+    ]
+  },
+  {
+    "name": "polygon triangle outline",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 8,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  1,
+                  1
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  4,
+                  6
+                ]
+              ],
+              "#FFFFFF",
+              {
+                "fill": false
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".........",
+      ".#######.",
+      "..#...#..",
+      "..#...#..",
+      "...#.#...",
+      "...#.#...",
+      "....#....",
+      "........."
+    ]
+  },
+  {
+    "name": "polygon concave arrow filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 11,
+          "rows": 9,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  3
+                ],
+                [
+                  6,
+                  3
+                ],
+                [
+                  6,
+                  0
+                ],
+                [
+                  10,
+                  4
+                ],
+                [
+                  6,
+                  8
+                ],
+                [
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "......#....",
+      "......##...",
+      "......###..",
+      "##########.",
+      "###########",
+      "##########.",
+      "......###..",
+      "......##...",
+      "......#...."
+    ]
+  },
+  {
+    "name": "polygon self-intersecting bow tie uses even-odd",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 9,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  8,
+                  8
+                ],
+                [
+                  8,
+                  0
+                ],
+                [
+                  0,
+                  8
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#......##",
+      "##....###",
+      "###..####",
+      "#########",
+      "#########",
+      "####.####",
+      "###...###",
+      "##.....##",
+      "#.......#"
+    ]
+  },
+  {
+    "name": "polygon diamond filled",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 9,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  4,
+                  0
+                ],
+                [
+                  8,
+                  4
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  0,
+                  4
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...##....",
+      "..####...",
+      ".######..",
+      "########.",
+      "#########",
+      ".#######.",
+      "..#####..",
+      "...###...",
+      "....#...."
+    ]
+  },
+  {
+    "name": "polygon partly outside is clipped",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  -3,
+                  -3
+                ],
+                [
+                  8,
+                  2
+                ],
+                [
+                  2,
+                  8
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#####.",
+      "######",
+      "######",
+      "######",
+      "######",
+      ".#####"
+    ]
+  },
+  {
+    "name": "polygon degenerate line",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  5,
+                  5
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#.....",
+      ".#....",
+      "..#...",
+      "...#..",
+      "....#.",
+      ".....#"
+    ]
+  },
+  {
+    "name": "floodFill inside an outline",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 7,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              7,
+              5,
+              "#FF0000",
+              {
+                "fill": false
+              }
+            ],
+            [
+              "floodFill",
+              4,
+              3,
+              "#00FF00"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".........",
+      ".#######.",
+      ".#AAAAA#.",
+      ".#AAAAA#.",
+      ".#AAAAA#.",
+      ".#######.",
+      "........."
+    ]
+  },
+  {
+    "name": "floodFill stops at the border",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 9,
+          "rows": 7,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              7,
+              5,
+              "#FF0000",
+              {
+                "fill": false
+              }
+            ],
+            [
+              "floodFill",
+              0,
+              0,
+              "#00FF00"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#########",
+      "#AAAAAAA#",
+      "#A.....A#",
+      "#A.....A#",
+      "#A.....A#",
+      "#AAAAAAA#",
+      "#########"
+    ]
+  },
+  {
+    "name": "floodFill inside a diamond wall stays inside",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "line",
+              0,
+              2,
+              2,
+              0,
+              "#FF0000"
+            ],
+            [
+              "line",
+              2,
+              0,
+              4,
+              2,
+              "#FF0000"
+            ],
+            [
+              "line",
+              4,
+              2,
+              2,
+              4,
+              "#FF0000"
+            ],
+            [
+              "line",
+              2,
+              4,
+              0,
+              2,
+              "#FF0000"
+            ],
+            [
+              "floodFill",
+              2,
+              2,
+              "#00FF00"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "..#..",
+      ".#A#.",
+      "#AAA#",
+      ".#A#.",
+      "..#.."
+    ]
+  },
+  {
+    "name": "floodFill 4-connected stops at a diagonal wall",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 4,
+          "ops": [
+            [
+              "set",
+              1,
+              0,
+              "#FF0000"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "#FF0000"
+            ],
+            [
+              "floodFill",
+              0,
+              0,
+              "#00FF00"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#A..",
+      "A...",
+      "....",
+      "...."
+    ]
+  },
+  {
+    "name": "floodFill with diagonal connectivity leaks through corners",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 4,
+          "ops": [
+            [
+              "set",
+              1,
+              0,
+              "#FF0000"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "#FF0000"
+            ],
+            [
+              "floodFill",
+              0,
+              0,
+              "#00FF00",
+              {
+                "diagonal": true
+              }
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#A##",
+      "A###",
+      "####",
+      "####"
+    ]
+  },
+  {
+    "name": "floodFill treats unset cells as the default",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 3,
+          "ops": [
+            [
+              "set",
+              1,
+              1,
+              "#FF0000"
+            ],
+            [
+              "floodFill",
+              1,
+              1,
+              "#00FF00"
+            ],
+            [
+              "floodFill",
+              3,
+              2,
+              "#0000FF"
+            ]
+          ],
+          "export": "ascii",
+          "options": {
+            "default": "#202020"
+          }
+        }
+      ]
+    },
+    "expected": [
+      "####",
+      "#A##",
+      "####"
+    ]
+  },
+  {
+    "name": "floodFill with a seed outside does nothing",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 3,
+          "ops": [
+            [
+              "floodFill",
+              7,
+              7,
+              "#00FF00"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...",
+      "...",
+      "..."
+    ]
+  },
+  {
+    "name": "floodFill on an empty default region",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 3,
+          "ops": [
+            [
+              "set",
+              2,
+              0,
+              "#FF0000"
+            ],
+            [
+              "set",
+              2,
+              1,
+              "#FF0000"
+            ],
+            [
+              "set",
+              2,
+              2,
+              "#FF0000"
+            ],
+            [
+              "floodFill",
+              0,
+              0,
+              "#00FF00"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "##A.",
+      "##A.",
+      "##A."
+    ]
+  },
+  {
+    "name": "flipX mirrors left to right",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              1,
+              5,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              1,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              3,
+              3,
+              1,
+              "#FF0000"
+            ],
+            [
+              "flipX"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "......",
+      ".####.",
+      "....#.",
+      "..###.",
+      "....#.",
+      "....#."
+    ]
+  },
+  {
+    "name": "flipY mirrors top to bottom",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              1,
+              5,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              1,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              3,
+              3,
+              1,
+              "#FF0000"
+            ],
+            [
+              "flipY"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".#....",
+      ".#....",
+      ".###..",
+      ".#....",
+      ".####.",
+      "......"
+    ]
+  },
+  {
+    "name": "rotate90 clockwise",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 4,
+          "ops": [
+            [
+              "rect",
+              0,
+              0,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "#00FF00"
+            ],
+            [
+              "set",
+              5,
+              3,
+              "#0000FF"
+            ],
+            [
+              "rotate90"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "..#A",
+      "...A",
+      "...A",
+      "...A",
+      "....",
+      "B..."
+    ]
+  },
+  {
+    "name": "rotate90 twice",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 4,
+          "ops": [
+            [
+              "rect",
+              0,
+              0,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "#00FF00"
+            ],
+            [
+              "set",
+              5,
+              3,
+              "#0000FF"
+            ],
+            [
+              "rotate90",
+              2
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#.....",
+      "......",
+      ".....A",
+      "..BBBB"
+    ]
+  },
+  {
+    "name": "rotate90 counter-clockwise via -1",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 4,
+          "ops": [
+            [
+              "rect",
+              0,
+              0,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "#00FF00"
+            ],
+            [
+              "set",
+              5,
+              3,
+              "#0000FF"
+            ],
+            [
+              "rotate90",
+              -1
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "...#",
+      "....",
+      "A...",
+      "A...",
+      "A...",
+      "AB.."
+    ]
+  },
+  {
+    "name": "rotate90 four turns is the identity",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 4,
+          "ops": [
+            [
+              "rect",
+              0,
+              0,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "set",
+              0,
+              1,
+              "#00FF00"
+            ],
+            [
+              "set",
+              5,
+              3,
+              "#0000FF"
+            ],
+            [
+              "rotate90",
+              4
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "####..",
+      "A.....",
+      "......",
+      ".....B"
+    ]
+  },
+  {
+    "name": "crop inside",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              1,
+              5,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              1,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              3,
+              3,
+              1,
+              "#FF0000"
+            ],
+            [
+              "crop",
+              1,
+              1,
+              4,
+              3
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "####",
+      "#...",
+      "###."
+    ]
+  },
+  {
+    "name": "crop past the edge leaves cells undrawn",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              1,
+              5,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              1,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              3,
+              3,
+              1,
+              "#FF0000"
+            ],
+            [
+              "crop",
+              3,
+              3,
+              6,
+              6
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "#.....",
+      "......",
+      "......",
+      "......",
+      "......",
+      "......"
+    ]
+  },
+  {
+    "name": "crop starting before the origin",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              1,
+              5,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              1,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              3,
+              3,
+              1,
+              "#FF0000"
+            ],
+            [
+              "crop",
+              -2,
+              -1,
+              5,
+              4
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      ".....",
+      ".....",
+      "...##",
+      "...#."
+    ]
+  },
+  {
+    "name": "transforms chain: crop then rotate then flip",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 6,
+          "rows": 6,
+          "ops": [
+            [
+              "rect",
+              1,
+              1,
+              1,
+              5,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              1,
+              4,
+              1,
+              "#FF0000"
+            ],
+            [
+              "rect",
+              1,
+              3,
+              3,
+              1,
+              "#FF0000"
+            ],
+            [
+              "crop",
+              0,
+              0,
+              5,
+              6
+            ],
+            [
+              "rotate90"
+            ],
+            [
+              "flipX"
+            ]
+          ],
+          "export": "ascii"
+        }
+      ]
+    },
+    "expected": [
+      "......",
+      ".#####",
+      ".#.#..",
+      ".#.#..",
+      ".#...."
+    ]
+  },
+  {
+    "name": "transforms keep default and layout",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 4,
+          "rows": 2,
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              "#FF0000"
+            ],
+            [
+              "rotate90"
+            ]
+          ],
+          "export": "ascii",
+          "options": {
+            "default": "#101010",
+            "layout": {
+              "gapMode": "far"
+            }
+          }
+        }
+      ]
+    },
+    "expected": [
+      ".#",
+      "..",
+      "..",
+      ".."
+    ]
+  },
+  {
+    "name": "rotate90 swaps the dimensions in the export",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 2,
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              "#FF0000"
+            ],
+            [
+              "rotate90"
+            ]
+          ],
+          "export": "root",
+          "options": {
+            "default": "#101010"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "pixels": [
+        [
+          null,
+          {
+            "color": "#FF0000",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          }
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "default": {
+        "color": "#101010",
+        "opacity": 1,
+        "cornerRadius": 0,
+        "rotation": 0,
+        "halo": 0
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      }
+    }
+  },
+  {
+    "name": "circle rejects fractional center",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "circle",
+              1.5,
+              2,
+              1,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "circle rejects negative radius",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "circle",
+              2,
+              2,
+              -1,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "ellipse rejects zero width",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "ellipse",
+              0,
+              0,
+              0,
+              3,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "ellipse rejects sizes beyond the exact range",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "ellipse",
+              0,
+              0,
+              5000,
+              3,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "roundRect rejects negative radius",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "roundRect",
+              0,
+              0,
+              3,
+              3,
+              -1,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "arc rejects thickness 0",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "arc",
+              2,
+              2,
+              2,
+              0,
+              90,
+              "#FFFFFF",
+              {
+                "thickness": 0
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "arc rejects non-integer radius",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "arc",
+              2,
+              2,
+              1.5,
+              0,
+              90,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "polygon rejects fewer than 3 points",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  3,
+                  3
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "polygon rejects fractional points",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "polygon",
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  3,
+                  3.5
+                ],
+                [
+                  0,
+                  3
+                ]
+              ],
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "floodFill rejects fractional seed",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "floodFill",
+              1.5,
+              1,
+              "#FFFFFF"
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "crop rejects zero size",
+    "call": {
+      "fn": "matrix",
+      "args": [
+        {
+          "columns": 5,
+          "rows": 5,
+          "ops": [
+            [
+              "crop",
+              0,
+              0,
+              0,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    "throws": true
+  }
+]

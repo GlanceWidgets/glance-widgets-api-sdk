@@ -1,0 +1,498 @@
+[
+  {
+    "name": "horizontal bar at 42 percent",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        42,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "frame": {
+            "left": 0.1,
+            "top": 0.4,
+            "width": 0.8,
+            "height": 0.2
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:progress:track",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_track"
+        },
+        {
+          "id": "remote:progress:fill",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_fill"
+        }
+      ],
+      "data": {
+        "layer_progress_3a_track": {
+          "frame": {
+            "left": 0.108876,
+            "top": 0.49,
+            "width": 0.782249,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_progress_3a_fill": {
+          "frame": {
+            "left": 0.108876,
+            "top": 0.49,
+            "width": 0.318249,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "percent label at the end",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        65,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "label": true,
+          "thickness": 8,
+          "colors": {
+            "fill": "#34C759"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:progress:track",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_track"
+        },
+        {
+          "id": "remote:progress:fill",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_fill"
+        },
+        {
+          "id": "remote:progress:label",
+          "type": "text",
+          "dataPath": "data.layer_progress_3a_label"
+        }
+      ],
+      "data": {
+        "layer_progress_3a_track": {
+          "frame": {
+            "left": 0.011834,
+            "top": 0.49,
+            "width": 0.874252,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_progress_3a_fill": {
+          "frame": {
+            "left": 0.011834,
+            "top": 0.49,
+            "width": 0.55998,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 8,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 1
+        },
+        "layer_progress_3a_label": {
+          "frame": {
+            "left": 0.911009,
+            "top": 0,
+            "width": 0.088991,
+            "height": 1
+          },
+          "content": {
+            "text": "65%"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1,
+            "opacity": 0,
+            "fontSizeRatio": 0.07,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "vertical reverse with custom label before",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        30,
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "orientation": "vertical",
+          "reverse": true,
+          "label": "30 GB",
+          "labelPosition": "start",
+          "min": 0,
+          "max": 50
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:progress:track",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_track"
+        },
+        {
+          "id": "remote:progress:fill",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_fill"
+        },
+        {
+          "id": "remote:progress:label",
+          "type": "text",
+          "dataPath": "data.layer_progress_3a_label"
+        }
+      ],
+      "data": {
+        "layer_progress_3a_track": {
+          "frame": {
+            "left": 0.49,
+            "top": 0.172987,
+            "width": 0.02,
+            "height": 0.808025
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_progress_3a_fill": {
+          "frame": {
+            "left": 0.49,
+            "top": 0.172987,
+            "width": 0.02,
+            "height": 0.469625
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 1
+        },
+        "layer_progress_3a_label": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.126
+          },
+          "content": {
+            "text": "30 GB"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1,
+            "opacity": 0,
+            "fontSizeRatio": 0.07,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "empty bar has no fill layer",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        0,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:progress:track",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_track"
+        }
+      ],
+      "data": {
+        "layer_progress_3a_track": {
+          "frame": {
+            "left": 0.008876,
+            "top": 0.49,
+            "width": 0.982249,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "full bar",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        100,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "thickness": 4
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:progress:track",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_track"
+        },
+        {
+          "id": "remote:progress:fill",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_fill"
+        }
+      ],
+      "data": {
+        "layer_progress_3a_track": {
+          "frame": {
+            "left": 0.005917,
+            "top": 0.49,
+            "width": 0.988166,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 4,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_progress_3a_fill": {
+          "frame": {
+            "left": 0.005917,
+            "top": 0.49,
+            "width": 0.988166,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 4,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "tiny value keeps one round cap",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        1,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:progress:track",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_track"
+        },
+        {
+          "id": "remote:progress:fill",
+          "type": "line",
+          "dataPath": "data.layer_progress_3a_fill"
+        }
+      ],
+      "data": {
+        "layer_progress_3a_track": {
+          "frame": {
+            "left": 0.008876,
+            "top": 0.49,
+            "width": 0.982249,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#8E8E93",
+            "opacity": 0.3,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 0
+        },
+        "layer_progress_3a_fill": {
+          "frame": {
+            "left": 0.008876,
+            "top": 0.49,
+            "width": 0.02,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#0A84FF",
+            "opacity": 1,
+            "strokeWidth": 6,
+            "pattern": "solid",
+            "cap": "round"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "thickness above 8 throws",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        50,
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "thickness": 9
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "missing canvas throws",
+    "call": {
+      "fn": "progressBar",
+      "args": [
+        50,
+        {}
+      ]
+    },
+    "throws": true
+  }
+]

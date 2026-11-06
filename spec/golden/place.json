@@ -1,0 +1,205 @@
+[
+  {
+    "name": "matrix part placed at nested path",
+    "call": {
+      "fn": "place",
+      "args": [
+        {
+          "columns": 3,
+          "rows": 2,
+          "options": {
+            "layout": {
+              "gapMode": "near"
+            }
+          },
+          "ops": [
+            [
+              "set",
+              0,
+              0,
+              "#FF0000"
+            ],
+            [
+              "set",
+              2,
+              1,
+              "#FF0000"
+            ]
+          ]
+        },
+        {
+          "id": "cpu",
+          "frame": {
+            "left": 0.1,
+            "top": 0.2,
+            "width": 0.5,
+            "height": 0.3
+          },
+          "path": "data.charts.cpu",
+          "zIndex": 2
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:cpu",
+          "type": "matrix",
+          "dataPath": "data.charts.cpu"
+        }
+      ],
+      "data": {
+        "charts": {
+          "cpu": {
+            "frame": {
+              "left": 0.1,
+              "top": 0.2,
+              "width": 0.5,
+              "height": 0.3
+            },
+            "content": {
+              "pixels": [
+                [
+                  null,
+                  null,
+                  null
+                ],
+                [
+                  null,
+                  null,
+                  null
+                ]
+              ],
+              "default": {
+                "empty": true
+              },
+              "layout": {
+                "gapMode": "near",
+                "edgeInsetRatio": 0,
+                "cellAspectRatio": 1
+              },
+              "batch": [
+                {
+                  "pixel": {
+                    "color": "#FF0000",
+                    "opacity": 1,
+                    "cornerRadius": 0,
+                    "rotation": 0,
+                    "halo": 0
+                  },
+                  "coordinates": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ]
+                }
+              ]
+            },
+            "style": {},
+            "zIndex": 2
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "existing remote: prefix is kept",
+    "call": {
+      "fn": "place",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1
+        },
+        {
+          "id": "remote:m",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "path": "data.m",
+          "rotation": 90
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:m",
+          "type": "matrix",
+          "dataPath": "data.m"
+        }
+      ],
+      "data": {
+        "m": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "pixels": [
+              [
+                null
+              ]
+            ],
+            "default": {
+              "empty": true
+            },
+            "layout": {
+              "gapMode": "default",
+              "edgeInsetRatio": 0,
+              "cellAspectRatio": 1
+            }
+          },
+          "style": {},
+          "rotation": 90
+        }
+      }
+    }
+  },
+  {
+    "name": "index paths are rejected",
+    "call": {
+      "fn": "place",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1
+        },
+        {
+          "id": "m",
+          "frame": {},
+          "path": "data.list[0]"
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "bare data path is rejected",
+    "call": {
+      "fn": "place",
+      "args": [
+        {
+          "columns": 1,
+          "rows": 1
+        },
+        {
+          "id": "m",
+          "frame": {},
+          "path": "data"
+        }
+      ]
+    },
+    "throws": true
+  }
+]

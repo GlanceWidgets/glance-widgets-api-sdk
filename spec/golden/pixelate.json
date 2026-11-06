@@ -1,0 +1,531 @@
+[
+  {
+    "name": "identity size keeps exact colors",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 3,
+          "height": 2,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            0,
+            255,
+            0,
+            255,
+            0,
+            0,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            0,
+            0,
+            0,
+            255,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "columns": 3,
+          "rows": 2
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#AB",
+        "CD."
+      ],
+      "colors": [
+        "#FF0000",
+        "#00FF00",
+        "#0000FF",
+        "#FFFFFF",
+        "#000000"
+      ]
+    }
+  },
+  {
+    "name": "downscale averages blocks",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 4,
+          "height": 2,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            255,
+            0,
+            0,
+            255,
+            0,
+            0,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            255,
+            0,
+            0,
+            255,
+            255,
+            0,
+            0,
+            255,
+            0,
+            0,
+            255,
+            255,
+            0,
+            0,
+            255,
+            255
+          ]
+        },
+        {
+          "columns": 2,
+          "rows": 1
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#A"
+      ],
+      "colors": [
+        "#FF0000",
+        "#4040FF"
+      ]
+    }
+  },
+  {
+    "name": "alpha weights the average",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 2,
+          "height": 1,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            0,
+            0,
+            255,
+            85
+          ]
+        },
+        {
+          "columns": 1,
+          "rows": 1
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#"
+      ],
+      "colors": [
+        "#BF0040"
+      ]
+    }
+  },
+  {
+    "name": "transparent cells stay undrawn",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 2,
+          "height": 1,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            0,
+            255,
+            0,
+            100
+          ]
+        },
+        {
+          "columns": 2,
+          "rows": 1
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#."
+      ],
+      "colors": [
+        "#FF0000"
+      ]
+    }
+  },
+  {
+    "name": "alphaThreshold 0 draws everything",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 2,
+          "height": 1,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            0,
+            255,
+            0,
+            0
+          ]
+        },
+        {
+          "columns": 2,
+          "rows": 1,
+          "alphaThreshold": 0
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#A"
+      ],
+      "colors": [
+        "#FF0000",
+        "#000000"
+      ]
+    }
+  },
+  {
+    "name": "upscale repeats pixels",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 2,
+          "height": 1,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            0,
+            0,
+            255,
+            255
+          ]
+        },
+        {
+          "columns": 4,
+          "rows": 2
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "##AA",
+        "##AA"
+      ],
+      "colors": [
+        "#FF0000",
+        "#0000FF"
+      ]
+    }
+  },
+  {
+    "name": "uneven blocks use floor boundaries",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 5,
+          "height": 1,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            255,
+            0,
+            0,
+            255,
+            0,
+            255,
+            0,
+            255,
+            0,
+            0,
+            255,
+            255,
+            0,
+            0,
+            255,
+            255
+          ]
+        },
+        {
+          "columns": 2,
+          "rows": 1
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#A"
+      ],
+      "colors": [
+        "#FF0000",
+        "#0055AA"
+      ]
+    }
+  },
+  {
+    "name": "palette snaps to the nearest color",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 4,
+          "height": 1,
+          "data": [
+            250,
+            10,
+            10,
+            255,
+            10,
+            200,
+            30,
+            255,
+            20,
+            20,
+            220,
+            255,
+            120,
+            120,
+            120,
+            255
+          ]
+        },
+        {
+          "columns": 4,
+          "rows": 1,
+          "palette": [
+            "#FF0000",
+            "#00FF00",
+            "#0000FF",
+            "#000000",
+            "#FFFFFF"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#ABC"
+      ],
+      "colors": [
+        "#FF0000",
+        "#00FF00",
+        "#0000FF",
+        "#000000"
+      ]
+    }
+  },
+  {
+    "name": "palette ties go to the earlier entry",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 1,
+          "height": 1,
+          "data": [
+            128,
+            0,
+            128,
+            255
+          ]
+        },
+        {
+          "columns": 1,
+          "rows": 1,
+          "palette": [
+            "#FF0000",
+            "#0000FF"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#"
+      ],
+      "colors": [
+        "#FF0000"
+      ]
+    }
+  },
+  {
+    "name": "palette ties go to the earlier entry (reversed palette)",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 1,
+          "height": 1,
+          "data": [
+            128,
+            0,
+            128,
+            255
+          ]
+        },
+        {
+          "columns": 1,
+          "rows": 1,
+          "palette": [
+            "#0000FF",
+            "#FF0000"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#"
+      ],
+      "colors": [
+        "#0000FF"
+      ]
+    }
+  },
+  {
+    "name": "matrix options give the unlit look",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 2,
+          "height": 1,
+          "data": [
+            255,
+            0,
+            0,
+            255,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "columns": 2,
+          "rows": 1,
+          "matrix": {
+            "default": "#202020"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "picture": [
+        "#."
+      ],
+      "colors": [
+        "#FF0000"
+      ]
+    }
+  },
+  {
+    "name": "wrong data length throws",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 2,
+          "height": 2,
+          "data": [
+            0,
+            0,
+            0,
+            255
+          ]
+        },
+        {
+          "columns": 1,
+          "rows": 1
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "unsupported dither throws",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 1,
+          "height": 1,
+          "data": [
+            0,
+            0,
+            0,
+            255
+          ]
+        },
+        {
+          "columns": 1,
+          "rows": 1,
+          "dither": "floyd-steinberg"
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "empty palette throws",
+    "call": {
+      "fn": "pixelate",
+      "args": [
+        {
+          "width": 1,
+          "height": 1,
+          "data": [
+            0,
+            0,
+            0,
+            255
+          ]
+        },
+        {
+          "columns": 1,
+          "rows": 1,
+          "palette": []
+        }
+      ]
+    },
+    "throws": true
+  }
+]

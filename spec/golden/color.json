@@ -1,0 +1,95 @@
+[
+  {
+    "name": "short hex expands, uppercase",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        "#abc"
+      ]
+    },
+    "expected": "#AABBCC"
+  },
+  {
+    "name": "opaque alpha is dropped",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        "ff102030"
+      ]
+    },
+    "expected": "#102030"
+  },
+  {
+    "name": "alpha first is kept",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        "#80102030"
+      ]
+    },
+    "expected": "#80102030"
+  },
+  {
+    "name": "css rgba order is not accepted",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        "rgba(1,2,3,0.5)"
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "withAlpha",
+    "call": {
+      "fn": "withAlpha",
+      "args": [
+        "#336699",
+        0.5
+      ]
+    },
+    "expected": "#80336699"
+  },
+  {
+    "name": "mixColors halfway",
+    "call": {
+      "fn": "mixColors",
+      "args": [
+        "#000000",
+        "#FFFFFF",
+        0.5
+      ]
+    },
+    "expected": "#808080"
+  },
+  {
+    "name": "normalizes colors surrounded by non-breaking spaces",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        " #fff "
+      ]
+    },
+    "expected": "#FFFFFF"
+  },
+  {
+    "name": "normalizes colors surrounded by byte order marks",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        "﻿#fff﻿"
+      ]
+    },
+    "expected": "#FFFFFF"
+  },
+  {
+    "name": "next-line control characters are not color whitespace",
+    "call": {
+      "fn": "normalizeColor",
+      "args": [
+        "#fff"
+      ]
+    },
+    "throws": true
+  }
+]

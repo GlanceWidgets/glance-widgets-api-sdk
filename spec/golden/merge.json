@@ -1,0 +1,520 @@
+[
+  {
+    "name": "data deep path merge, later leaf wins, arrays are leaves",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "data": {
+            "a": {
+              "x": 1,
+              "list": [
+                1,
+                2
+              ]
+            },
+            "b": 1
+          }
+        },
+        {
+          "data": {
+            "a": {
+              "y": 2,
+              "list": [
+                3
+              ]
+            },
+            "b": {
+              "nested": true
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "protocol": 1,
+      "data": {
+        "a": {
+          "x": 1,
+          "list": [
+            3
+          ],
+          "y": 2
+        },
+        "b": {
+          "nested": true
+        }
+      }
+    }
+  },
+  {
+    "name": "layers concat, same id replaces in place",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "layers": [
+            {
+              "id": "remote:a",
+              "type": "text",
+              "dataPath": "data.node_remote_a"
+            },
+            {
+              "id": "remote:b",
+              "type": "text",
+              "dataPath": "data.node_remote_b"
+            }
+          ],
+          "data": {
+            "node_remote_a": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": "1"
+              },
+              "style": {}
+            },
+            "node_remote_b": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": "2"
+              },
+              "style": {}
+            }
+          }
+        },
+        {
+          "layers": [
+            {
+              "id": "remote:c",
+              "type": "text",
+              "dataPath": "data.node_remote_c"
+            },
+            {
+              "id": "remote:a",
+              "type": "text",
+              "dataPath": "data.node_remote_a"
+            }
+          ],
+          "data": {
+            "node_remote_c": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": "3"
+              },
+              "style": {}
+            },
+            "node_remote_a": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": "1b"
+              },
+              "style": {}
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "protocol": 1,
+      "layers": [
+        {
+          "id": "remote:a",
+          "type": "text",
+          "dataPath": "data.node_remote_a"
+        },
+        {
+          "id": "remote:b",
+          "type": "text",
+          "dataPath": "data.node_remote_b"
+        },
+        {
+          "id": "remote:c",
+          "type": "text",
+          "dataPath": "data.node_remote_c"
+        }
+      ],
+      "data": {
+        "node_remote_a": {
+          "frame": {
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "text": "1b"
+          },
+          "style": {}
+        },
+        "node_remote_b": {
+          "frame": {
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "text": "2"
+          },
+          "style": {}
+        },
+        "node_remote_c": {
+          "frame": {
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "text": "3"
+          },
+          "style": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "root matrix is replaced as a unit",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "default": {
+            "empty": true
+          },
+          "batch": [
+            {
+              "pixel": {
+                "color": "#FFFFFF"
+              },
+              "coordinates": [
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "data": {
+            "k": 1
+          }
+        },
+        {
+          "pixels": [
+            [
+              {
+                "color": "#000000",
+                "opacity": 1,
+                "cornerRadius": 0,
+                "rotation": 0,
+                "halo": 0
+              }
+            ]
+          ],
+          "layout": {
+            "gapMode": "zero"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "protocol": 1,
+      "pixels": [
+        [
+          {
+            "color": "#000000",
+            "opacity": 1,
+            "cornerRadius": 0,
+            "rotation": 0,
+            "halo": 0
+          }
+        ]
+      ],
+      "layout": {
+        "gapMode": "zero"
+      },
+      "data": {
+        "k": 1
+      }
+    }
+  },
+  {
+    "name": "protocol is always 1",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "protocol": 1
+        },
+        {}
+      ]
+    },
+    "expected": {
+      "protocol": 1
+    }
+  },
+  {
+    "name": "error mode: data leaf conflict throws",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "data": {
+            "a": {
+              "b": 1
+            }
+          }
+        },
+        {
+          "data": {
+            "a": {
+              "b": 2
+            }
+          }
+        },
+        {
+          "onConflict": "error"
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "error mode: disjoint paths merge",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "data": {
+            "a": {
+              "b": 1
+            }
+          }
+        },
+        {
+          "data": {
+            "a": {
+              "c": 2
+            }
+          }
+        },
+        {
+          "onConflict": "error"
+        }
+      ]
+    },
+    "expected": {
+      "protocol": 1,
+      "data": {
+        "a": {
+          "b": 1,
+          "c": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "error mode: duplicate layer id throws",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "layers": [
+            {
+              "id": "remote:a",
+              "type": "shape",
+              "dataPath": "data.node_remote_a"
+            }
+          ],
+          "data": {
+            "node_remote_a": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {},
+              "style": {}
+            }
+          }
+        },
+        {
+          "layers": [
+            {
+              "id": "remote:a",
+              "type": "shape",
+              "dataPath": "data.node_remote_a"
+            }
+          ],
+          "data": {
+            "node_remote_a": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {},
+              "style": {}
+            }
+          }
+        },
+        {
+          "onConflict": "error"
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "error mode: second root throws",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "pixels": [
+            [
+              null
+            ]
+          ]
+        },
+        {
+          "pixels": [
+            [
+              null
+            ]
+          ]
+        },
+        {
+          "onConflict": "error"
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "matrix part is rejected (place it first)",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "content": {
+            "pixels": [
+              [
+                null
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "root fields without pixels are rejected",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "layout": {
+            "gapMode": "near"
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "empty arrays cannot be merged as objects",
+    "call": {
+      "fn": "merge",
+      "args": [
+        []
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "null layers cannot be merged as a list",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "layers": null
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "object layers cannot be merged as a list",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "layers": {}
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "merge prototype key data conflicts like any key",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "data": {
+            "constructor": 1
+          }
+        },
+        {
+          "data": {
+            "constructor": 2
+          }
+        },
+        {
+          "onConflict": "error"
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "merge null onConflict means override",
+    "call": {
+      "fn": "merge",
+      "args": [
+        {
+          "data": {
+            "a": 1
+          }
+        },
+        {
+          "data": {
+            "a": 2
+          }
+        },
+        {
+          "onConflict": null
+        }
+      ]
+    },
+    "expected": {
+      "protocol": 1,
+      "data": {
+        "a": 2
+      }
+    }
+  }
+]

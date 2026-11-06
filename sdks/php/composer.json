@@ -1,0 +1,18 @@
+{
+  "name": "glancewidgets/api-sdk",
+  "description": "SDK for generating Glance Widgets API responses",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["glance-widgets", "widget", "pixel", "sdk"],
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "files": [
+      "src/GlanceWidgets.php"
+    ]
+  },
+  "scripts": {
+    "test": "bash test.sh"
+  }
+}

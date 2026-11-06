@@ -1,0 +1,418 @@
+{
+  "pixel": {
+    "color": "color",
+    "opacity": "number",
+    "cornerRadius": "number",
+    "rotation": "number",
+    "halo": "number",
+    "empty": "boolean"
+  },
+  "layout": {
+    "gapMode": {
+      "enum": [
+        "zero",
+        "near",
+        "default",
+        "far",
+        "extraFar"
+      ]
+    },
+    "edgeInsetRatio": "number",
+    "cellAspectRatio": "number",
+    "columnGapRatio": "number",
+    "rowGapRatio": "number"
+  },
+  "layers": {
+    "text": {
+      "content": {
+        "text": "textValue"
+      },
+      "style": {
+        "effectType": {
+          "enum": [
+            "none",
+            "mask",
+            "vignette",
+            "readability"
+          ]
+        },
+        "backgroundColor": "color",
+        "opacity": "number",
+        "cornerRadiusRatio": "number",
+        "borderColor": "color",
+        "borderOpacity": "number",
+        "borderWidth": "number",
+        "gradientEnabled": "boolean",
+        "gradientColors": {
+          "arrayOf": "color"
+        },
+        "gradientStops": {
+          "arrayOf": "number"
+        },
+        "gradientAngle": "number",
+        "maskColor": "color",
+        "maskOpacity": "number",
+        "vignetteIntensity": "number",
+        "readabilityGradient": {
+          "enum": [
+            "none",
+            "top",
+            "bottom",
+            "left",
+            "right",
+            "both",
+            "topLeftDiagonal",
+            "topRightDiagonal"
+          ]
+        },
+        "color": "color",
+        "textOpacity": "number",
+        "fontSizeRatio": "number",
+        "fontWeight": {
+          "enum": [
+            "300",
+            "400",
+            "500",
+            "600",
+            "700"
+          ]
+        },
+        "fontFamily": {
+          "enum": [
+            "system",
+            "systemMonospace",
+            "monospace"
+          ]
+        },
+        "fontFamilyFallback": {
+          "arrayOf": "string"
+        },
+        "letterSpacing": "number",
+        "baselineRatio": "number",
+        "horizontalAlignment": {
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ]
+        },
+        "verticalAlignment": {
+          "enum": [
+            "top",
+            "center",
+            "bottom"
+          ]
+        },
+        "autoWrap": "boolean",
+        "paddingRatio": "number"
+      }
+    },
+    "line": {
+      "content": {
+        "direction": {
+          "enum": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      },
+      "style": {
+        "color": "color",
+        "opacity": "number",
+        "strokeWidth": "number",
+        "pattern": {
+          "enum": [
+            "solid",
+            "dashed",
+            "dotted"
+          ]
+        },
+        "cap": {
+          "enum": [
+            "round",
+            "butt"
+          ]
+        },
+        "dashLength": "number",
+        "dashGap": "number",
+        "gradientEnabled": "boolean",
+        "gradientColors": {
+          "arrayOf": "color"
+        },
+        "gradientStops": {
+          "arrayOf": "number"
+        }
+      }
+    },
+    "shape": {
+      "content": {},
+      "style": {
+        "effectType": {
+          "enum": [
+            "none",
+            "mask",
+            "vignette",
+            "readability"
+          ]
+        },
+        "backgroundColor": "color",
+        "opacity": "number",
+        "cornerRadiusRatio": "number",
+        "borderColor": "color",
+        "borderOpacity": "number",
+        "borderWidth": "number",
+        "gradientEnabled": "boolean",
+        "gradientColors": {
+          "arrayOf": "color"
+        },
+        "gradientStops": {
+          "arrayOf": "number"
+        },
+        "gradientAngle": "number",
+        "maskColor": "color",
+        "maskOpacity": "number",
+        "vignetteIntensity": "number",
+        "readabilityGradient": {
+          "enum": [
+            "none",
+            "top",
+            "bottom",
+            "left",
+            "right",
+            "both",
+            "topLeftDiagonal",
+            "topRightDiagonal"
+          ]
+        },
+        "color": "color"
+      }
+    },
+    "icon": {
+      "content": {
+        "icon": "string",
+        "iconCodePoint": "integer",
+        "iconFont": {
+          "enum": [
+            "material",
+            "phosphorBold",
+            "devicon",
+            "simpleIcons"
+          ]
+        },
+        "url": "string"
+      },
+      "style": {
+        "color": "color",
+        "textOpacity": "number",
+        "iconGlowEnabled": "boolean",
+        "iconGlowColor": "color",
+        "iconGlowOpacity": "number",
+        "iconGlowRadius": "number"
+      }
+    },
+    "image": {
+      "content": {
+        "url": "string"
+      },
+      "style": {
+        "effectType": {
+          "enum": [
+            "none",
+            "mask",
+            "vignette",
+            "readability"
+          ]
+        },
+        "backgroundColor": "color",
+        "opacity": "number",
+        "cornerRadiusRatio": "number",
+        "borderColor": "color",
+        "borderOpacity": "number",
+        "borderWidth": "number",
+        "gradientEnabled": "boolean",
+        "gradientColors": {
+          "arrayOf": "color"
+        },
+        "gradientStops": {
+          "arrayOf": "number"
+        },
+        "gradientAngle": "number",
+        "maskColor": "color",
+        "maskOpacity": "number",
+        "vignetteIntensity": "number",
+        "readabilityGradient": {
+          "enum": [
+            "none",
+            "top",
+            "bottom",
+            "left",
+            "right",
+            "both",
+            "topLeftDiagonal",
+            "topRightDiagonal"
+          ]
+        },
+        "color": "color"
+      }
+    },
+    "matrix": {
+      "content": {
+        "pixels": {
+          "arrayOf": {
+            "arrayOf": {
+              "object": {
+                "color": "color",
+                "opacity": "number",
+                "cornerRadius": "number",
+                "rotation": "number",
+                "halo": "number",
+                "empty": "boolean"
+              }
+            }
+          }
+        },
+        "default": {
+          "object": {
+            "color": "color",
+            "opacity": "number",
+            "cornerRadius": "number",
+            "rotation": "number",
+            "halo": "number",
+            "empty": "boolean"
+          }
+        },
+        "batch": {
+          "arrayOf": {
+            "object": {}
+          }
+        },
+        "layout": {
+          "object": {
+            "gapMode": {
+              "enum": [
+                "zero",
+                "near",
+                "default",
+                "far",
+                "extraFar"
+              ]
+            },
+            "edgeInsetRatio": "number",
+            "cellAspectRatio": "number",
+            "columnGapRatio": "number",
+            "rowGapRatio": "number"
+          }
+        }
+      },
+      "style": {}
+    },
+    "curve": {
+      "content": {
+        "mode": {
+          "enum": [
+            "samples",
+            "function"
+          ]
+        },
+        "points": {
+          "arrayOf": {
+            "arrayOf": "number",
+            "length": 2
+          }
+        },
+        "expression": "string",
+        "parameters": {
+          "record": "number"
+        },
+        "domain": {
+          "arrayOf": "number",
+          "length": 2
+        },
+        "yDomain": {
+          "arrayOf": "number",
+          "length": 2
+        },
+        "interpolation": {
+          "enum": [
+            "linear",
+            "stepAfter",
+            "monotone"
+          ]
+        },
+        "markers": {
+          "arrayOf": {
+            "object": {
+              "at": {
+                "object": {
+                  "x": "number",
+                  "sampleIndex": "integer",
+                  "offsetPt": {
+                    "arrayOf": "number",
+                    "length": 2
+                  }
+                }
+              },
+              "symbol": {
+                "object": {
+                  "radiusPt": "number",
+                  "fill": "color"
+                }
+              },
+              "label": "string",
+              "labelStyle": {
+                "object": {
+                  "color": "color",
+                  "fontSizePt": "number",
+                  "position": {
+                    "enum": [
+                      "top",
+                      "bottom",
+                      "left",
+                      "right"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "style": {
+        "color": "color",
+        "opacity": "number",
+        "strokeWidth": "number",
+        "lineCap": {
+          "enum": [
+            "round",
+            "butt",
+            "square"
+          ]
+        },
+        "lineJoin": {
+          "enum": [
+            "round",
+            "bevel",
+            "miter"
+          ]
+        },
+        "dashLength": "number",
+        "dashGap": "number",
+        "fillColor": "color",
+        "fillOpacity": "number",
+        "plotPadding": "number"
+      }
+    }
+  },
+  "frame": {
+    "left": "number",
+    "top": "number",
+    "right": "number",
+    "bottom": "number",
+    "width": "number",
+    "height": "number"
+  },
+  "transform": {
+    "translateX": "number",
+    "translateY": "number"
+  }
+}

@@ -1,0 +1,2448 @@
+[
+  {
+    "name": "one series with axes and labels",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          [
+            3,
+            5,
+            4,
+            8,
+            6,
+            9,
+            7
+          ]
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:lineChart:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_lineChart_3a_series_2d_0"
+        },
+        {
+          "id": "remote:lineChart:axis-value",
+          "type": "line",
+          "dataPath": "data.layer_lineChart_3a_axis_2d_value"
+        },
+        {
+          "id": "remote:lineChart:axis-base",
+          "type": "line",
+          "dataPath": "data.layer_lineChart_3a_axis_2d_base"
+        },
+        {
+          "id": "remote:lineChart:value-0",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_0"
+        },
+        {
+          "id": "remote:lineChart:value-1",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_1"
+        }
+      ],
+      "data": {
+        "layer_lineChart_3a_series_2d_0": {
+          "frame": {
+            "left": 0.035499,
+            "top": 0.047671,
+            "width": 0.964501,
+            "height": 0.904658
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                8
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                5,
+                9
+              ],
+              [
+                6,
+                7
+              ]
+            ],
+            "domain": [
+              0,
+              6
+            ],
+            "yDomain": [
+              3,
+              9
+            ],
+            "interpolation": "monotone",
+            "markers": []
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 1,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        },
+        "layer_lineChart_3a_axis_2d_value": {
+          "frame": {
+            "left": 0.026978,
+            "top": 0.054,
+            "width": 0.02,
+            "height": 0.892
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_axis_2d_base": {
+          "frame": {
+            "left": 0.035499,
+            "top": 0.939164,
+            "width": 0.961542,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.02428,
+            "height": 0.108
+          },
+          "content": {
+            "text": "9"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_1": {
+          "frame": {
+            "left": 0,
+            "top": 0.892,
+            "width": 0.02428,
+            "height": 0.108
+          },
+          "content": {
+            "text": "3"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "two series, pixel grid, markers with labels and x labels",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          {
+            "values": [
+              1,
+              3,
+              2,
+              5,
+              4
+            ],
+            "color": "#5AC8FA"
+          },
+          {
+            "points": [
+              [
+                4,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "color": "#FF9F0A"
+          }
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "id": "cpu",
+          "grid": true,
+          "markers": {
+            "last": true,
+            "max": true,
+            "min": true,
+            "labels": true
+          },
+          "xLabels": [
+            "Mon",
+            "Wed",
+            "Fri"
+          ],
+          "interpolation": "linear",
+          "min": 0,
+          "max": 6,
+          "decimals": 0
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:cpu:grid",
+          "type": "matrix",
+          "dataPath": "data.cpu"
+        },
+        {
+          "id": "remote:cpu:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_cpu_3a_series_2d_0"
+        },
+        {
+          "id": "remote:cpu:series-1",
+          "type": "curve",
+          "dataPath": "data.layer_cpu_3a_series_2d_1"
+        },
+        {
+          "id": "remote:cpu:axis-value",
+          "type": "line",
+          "dataPath": "data.layer_cpu_3a_axis_2d_value"
+        },
+        {
+          "id": "remote:cpu:axis-base",
+          "type": "line",
+          "dataPath": "data.layer_cpu_3a_axis_2d_base"
+        },
+        {
+          "id": "remote:cpu:value-0",
+          "type": "text",
+          "dataPath": "data.layer_cpu_3a_value_2d_0"
+        },
+        {
+          "id": "remote:cpu:value-1",
+          "type": "text",
+          "dataPath": "data.layer_cpu_3a_value_2d_1"
+        },
+        {
+          "id": "remote:cpu:x-0",
+          "type": "text",
+          "dataPath": "data.layer_cpu_3a_x_2d_0"
+        },
+        {
+          "id": "remote:cpu:x-1",
+          "type": "text",
+          "dataPath": "data.layer_cpu_3a_x_2d_1"
+        },
+        {
+          "id": "remote:cpu:x-2",
+          "type": "text",
+          "dataPath": "data.layer_cpu_3a_x_2d_2"
+        }
+      ],
+      "data": {
+        "cpu": {
+          "frame": {
+            "left": 0.053254,
+            "top": 0.113924,
+            "width": 0.893491,
+            "height": 0.772152
+          },
+          "content": {
+            "pixels": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "default": {
+              "color": "#27402B",
+              "opacity": 0.3,
+              "cornerRadius": 0,
+              "rotation": 0,
+              "halo": 0
+            },
+            "layout": {
+              "gapMode": "near",
+              "edgeInsetRatio": 0,
+              "cellAspectRatio": 0.9860623667883549
+            }
+          },
+          "style": {},
+          "zIndex": 0
+        },
+        "layer_cpu_3a_series_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "domain": [
+              0,
+              4
+            ],
+            "yDomain": [
+              0,
+              6
+            ],
+            "interpolation": "linear",
+            "markers": [
+              {
+                "at": {
+                  "x": 4,
+                  "offsetPt": [
+                    0,
+                    -5
+                  ]
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#5AC8FA"
+                },
+                "label": "4",
+                "labelStyle": {
+                  "color": "#FFFFFF",
+                  "fontSizePt": 10,
+                  "position": "top"
+                }
+              },
+              {
+                "at": {
+                  "x": 3,
+                  "offsetPt": [
+                    0,
+                    -5
+                  ]
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#5AC8FA"
+                },
+                "label": "5",
+                "labelStyle": {
+                  "color": "#FFFFFF",
+                  "fontSizePt": 10,
+                  "position": "top"
+                }
+              },
+              {
+                "at": {
+                  "x": 0,
+                  "offsetPt": [
+                    0,
+                    5
+                  ]
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#5AC8FA"
+                },
+                "label": "1",
+                "labelStyle": {
+                  "color": "#FFFFFF",
+                  "fontSizePt": 10,
+                  "position": "bottom"
+                }
+              }
+            ]
+          },
+          "style": {
+            "color": "#5AC8FA",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 18,
+            "fillColor": "#5AC8FA"
+          },
+          "zIndex": 1
+        },
+        "layer_cpu_3a_series_2d_1": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                2
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                1
+              ]
+            ],
+            "domain": [
+              0,
+              4
+            ],
+            "yDomain": [
+              0,
+              6
+            ],
+            "interpolation": "linear",
+            "markers": [
+              {
+                "at": {
+                  "x": 4,
+                  "offsetPt": [
+                    0,
+                    -5
+                  ]
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#FF9F0A"
+                },
+                "label": "1",
+                "labelStyle": {
+                  "color": "#FFFFFF",
+                  "fontSizePt": 10,
+                  "position": "top"
+                }
+              },
+              {
+                "at": {
+                  "x": 2,
+                  "offsetPt": [
+                    0,
+                    -5
+                  ]
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#FF9F0A"
+                },
+                "label": "4",
+                "labelStyle": {
+                  "color": "#FFFFFF",
+                  "fontSizePt": 10,
+                  "position": "top"
+                }
+              }
+            ]
+          },
+          "style": {
+            "color": "#FF9F0A",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 18,
+            "fillColor": "#FF9F0A"
+          },
+          "zIndex": 1
+        },
+        "layer_cpu_3a_axis_2d_value": {
+          "frame": {
+            "left": 0.041775,
+            "top": 0.113924,
+            "width": 0.02,
+            "height": 0.772152
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_cpu_3a_axis_2d_base": {
+          "frame": {
+            "left": 0.050296,
+            "top": 0.879241,
+            "width": 0.896449,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_cpu_3a_value_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0.059924,
+            "width": 0.039077,
+            "height": 0.108
+          },
+          "content": {
+            "text": "6"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_cpu_3a_value_2d_1": {
+          "frame": {
+            "left": 0,
+            "top": 0.832076,
+            "width": 0.039077,
+            "height": 0.108
+          },
+          "content": {
+            "text": "0"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_cpu_3a_x_2d_0": {
+          "frame": {
+            "left": 0.018276,
+            "top": 0.916405,
+            "width": 0.069957,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "Mon"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_cpu_3a_x_2d_1": {
+          "frame": {
+            "left": 0.463416,
+            "top": 0.916405,
+            "width": 0.073167,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "Wed"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_cpu_3a_x_2d_2": {
+          "frame": {
+            "left": 0.924032,
+            "top": 0.916405,
+            "width": 0.045425,
+            "height": 0.078329
+          },
+          "content": {
+            "text": "Fri"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "no axes needs no canvas",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        {
+          "showAxes": false,
+          "showValueLabels": false,
+          "frame": {
+            "left": 0.1,
+            "top": 0.1,
+            "width": 0.8,
+            "height": 0.5
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:lineChart:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_lineChart_3a_series_2d_0"
+        }
+      ],
+      "data": {
+        "layer_lineChart_3a_series_2d_0": {
+          "frame": {
+            "left": 0.1,
+            "top": 0.1,
+            "width": 0.8,
+            "height": 0.5
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "domain": [
+              0,
+              2
+            ],
+            "yDomain": [
+              1,
+              3
+            ],
+            "interpolation": "monotone",
+            "markers": []
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 1,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "area chart is filled",
+    "call": {
+      "fn": "areaChart",
+      "args": [
+        [
+          [
+            10,
+            40,
+            20,
+            50,
+            30
+          ]
+        ],
+        {
+          "canvas": {
+            "width": 158,
+            "height": 158
+          },
+          "showAxes": false,
+          "fillOpacity": 0.4,
+          "interpolation": "stepAfter",
+          "colors": {
+            "series": [
+              "#34C759"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:lineChart:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_lineChart_3a_series_2d_0"
+        },
+        {
+          "id": "remote:lineChart:value-0",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_0"
+        },
+        {
+          "id": "remote:lineChart:value-1",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_1"
+        }
+      ],
+      "data": {
+        "layer_lineChart_3a_series_2d_0": {
+          "frame": {
+            "left": 0.114027,
+            "top": 0.047671,
+            "width": 0.885973,
+            "height": 0.904658
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                10
+              ],
+              [
+                1,
+                40
+              ],
+              [
+                2,
+                20
+              ],
+              [
+                3,
+                50
+              ],
+              [
+                4,
+                30
+              ]
+            ],
+            "domain": [
+              0,
+              4
+            ],
+            "yDomain": [
+              10,
+              50
+            ],
+            "interpolation": "stepAfter",
+            "markers": []
+          },
+          "style": {
+            "color": "#34C759",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0.4,
+            "plotPadding": 1,
+            "fillColor": "#34C759"
+          },
+          "zIndex": 1
+        },
+        "layer_lineChart_3a_value_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.090027,
+            "height": 0.108
+          },
+          "content": {
+            "text": "50"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_1": {
+          "frame": {
+            "left": 0,
+            "top": 0.892,
+            "width": 0.090027,
+            "height": 0.108
+          },
+          "content": {
+            "text": "10"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "area chart with default fill and axes",
+    "call": {
+      "fn": "areaChart",
+      "args": [
+        [
+          [
+            0.5,
+            1.5,
+            1
+          ]
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:lineChart:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_lineChart_3a_series_2d_0"
+        },
+        {
+          "id": "remote:lineChart:axis-value",
+          "type": "line",
+          "dataPath": "data.layer_lineChart_3a_axis_2d_value"
+        },
+        {
+          "id": "remote:lineChart:axis-base",
+          "type": "line",
+          "dataPath": "data.layer_lineChart_3a_axis_2d_base"
+        },
+        {
+          "id": "remote:lineChart:value-0",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_0"
+        },
+        {
+          "id": "remote:lineChart:value-1",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_1"
+        }
+      ],
+      "data": {
+        "layer_lineChart_3a_series_2d_0": {
+          "frame": {
+            "left": 0.067688,
+            "top": 0.047671,
+            "width": 0.932312,
+            "height": 0.904658
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                0.5
+              ],
+              [
+                1,
+                1.5
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "domain": [
+              0,
+              2
+            ],
+            "yDomain": [
+              0.5,
+              1.5
+            ],
+            "interpolation": "monotone",
+            "markers": []
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0.3,
+            "plotPadding": 1,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        },
+        "layer_lineChart_3a_axis_2d_value": {
+          "frame": {
+            "left": 0.059167,
+            "top": 0.054,
+            "width": 0.02,
+            "height": 0.892
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_axis_2d_base": {
+          "frame": {
+            "left": 0.067688,
+            "top": 0.939164,
+            "width": 0.929353,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.056469,
+            "height": 0.108
+          },
+          "content": {
+            "text": "1.5"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_1": {
+          "frame": {
+            "left": 0,
+            "top": 0.892,
+            "width": 0.056469,
+            "height": 0.108
+          },
+          "content": {
+            "text": "0.5"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "sparkline needs no canvas",
+    "call": {
+      "fn": "sparkline",
+      "args": [
+        [
+          3,
+          4,
+          2,
+          6,
+          5,
+          8
+        ],
+        {}
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:sparkline:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_sparkline_3a_series_2d_0"
+        }
+      ],
+      "data": {
+        "layer_sparkline_3a_series_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                6
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                8
+              ]
+            ],
+            "domain": [
+              0,
+              5
+            ],
+            "yDomain": [
+              2,
+              8
+            ],
+            "interpolation": "monotone",
+            "markers": [
+              {
+                "at": {
+                  "x": 5
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#6BA7FF"
+                }
+              }
+            ]
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 3,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "sparkline with fill, grid and all markers",
+    "call": {
+      "fn": "sparkline",
+      "args": [
+        [
+          3,
+          4,
+          2,
+          6,
+          5,
+          8
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "frame": {
+            "left": 0.1,
+            "top": 0.1,
+            "width": 0.5,
+            "height": 0.3
+          },
+          "fill": true,
+          "grid": {
+            "cellSize": 6,
+            "theme": "dot"
+          },
+          "markers": {
+            "last": true,
+            "min": true,
+            "max": true
+          },
+          "color": "#FF453A",
+          "strokeWidth": 3
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:sparkline:grid",
+          "type": "matrix",
+          "dataPath": "data.sparkline"
+        },
+        {
+          "id": "remote:sparkline:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_sparkline_3a_series_2d_0"
+        }
+      ],
+      "data": {
+        "sparkline": {
+          "frame": {
+            "left": 0.108876,
+            "top": 0.118987,
+            "width": 0.482249,
+            "height": 0.262025
+          },
+          "content": {
+            "pixels": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "default": {
+              "color": "#48484A",
+              "opacity": 0.3,
+              "cornerRadius": 0.5,
+              "rotation": 0,
+              "halo": 0
+            },
+            "layout": {
+              "gapMode": "extraFar",
+              "edgeInsetRatio": 0,
+              "cellAspectRatio": 0.9869915970863535
+            }
+          },
+          "style": {},
+          "zIndex": 0
+        },
+        "layer_sparkline_3a_series_2d_0": {
+          "frame": {
+            "left": 0.1,
+            "top": 0.1,
+            "width": 0.5,
+            "height": 0.3
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                6
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                8
+              ]
+            ],
+            "domain": [
+              0,
+              5
+            ],
+            "yDomain": [
+              2,
+              8
+            ],
+            "interpolation": "monotone",
+            "markers": [
+              {
+                "at": {
+                  "x": 5
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#FF453A"
+                }
+              },
+              {
+                "at": {
+                  "x": 2
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#FF453A"
+                }
+              }
+            ]
+          },
+          "style": {
+            "color": "#FF453A",
+            "opacity": 1,
+            "strokeWidth": 3,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0.3,
+            "plotPadding": 3,
+            "fillColor": "#FF453A"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "flat series gets a widened range",
+    "call": {
+      "fn": "sparkline",
+      "args": [
+        [
+          5,
+          5,
+          5
+        ],
+        {}
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:sparkline:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_sparkline_3a_series_2d_0"
+        }
+      ],
+      "data": {
+        "layer_sparkline_3a_series_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                5
+              ]
+            ],
+            "domain": [
+              0,
+              2
+            ],
+            "yDomain": [
+              4.5,
+              5.5
+            ],
+            "interpolation": "monotone",
+            "markers": [
+              {
+                "at": {
+                  "x": 2
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#6BA7FF"
+                }
+              }
+            ]
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 3,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "values are clamped into a fixed range",
+    "call": {
+      "fn": "sparkline",
+      "args": [
+        [
+          -5,
+          5,
+          15
+        ],
+        {
+          "min": 0,
+          "max": 10
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:sparkline:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_sparkline_3a_series_2d_0"
+        }
+      ],
+      "data": {
+        "layer_sparkline_3a_series_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                10
+              ]
+            ],
+            "domain": [
+              0,
+              2
+            ],
+            "yDomain": [
+              0,
+              10
+            ],
+            "interpolation": "monotone",
+            "markers": [
+              {
+                "at": {
+                  "x": 2
+                },
+                "symbol": {
+                  "radiusPt": 3,
+                  "fill": "#6BA7FF"
+                }
+              }
+            ]
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 3,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "axes need a canvas",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        {}
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "repeated x throws",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          {
+            "points": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          }
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "one point is not a line",
+    "call": {
+      "fn": "sparkline",
+      "args": [
+        [
+          1
+        ],
+        {}
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "series needs values or points",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          {}
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "lineChart null showAxes showValueLabels grid use defaults",
+    "call": {
+      "fn": "lineChart",
+      "args": [
+        [
+          [
+            3,
+            5,
+            4,
+            8
+          ]
+        ],
+        {
+          "canvas": {
+            "width": 338,
+            "height": 158
+          },
+          "showAxes": null,
+          "showValueLabels": null,
+          "grid": null
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:lineChart:series-0",
+          "type": "curve",
+          "dataPath": "data.layer_lineChart_3a_series_2d_0"
+        },
+        {
+          "id": "remote:lineChart:axis-value",
+          "type": "line",
+          "dataPath": "data.layer_lineChart_3a_axis_2d_value"
+        },
+        {
+          "id": "remote:lineChart:axis-base",
+          "type": "line",
+          "dataPath": "data.layer_lineChart_3a_axis_2d_base"
+        },
+        {
+          "id": "remote:lineChart:value-0",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_0"
+        },
+        {
+          "id": "remote:lineChart:value-1",
+          "type": "text",
+          "dataPath": "data.layer_lineChart_3a_value_2d_1"
+        }
+      ],
+      "data": {
+        "layer_lineChart_3a_series_2d_0": {
+          "frame": {
+            "left": 0.035794,
+            "top": 0.047671,
+            "width": 0.964206,
+            "height": 0.904658
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                8
+              ]
+            ],
+            "domain": [
+              0,
+              3
+            ],
+            "yDomain": [
+              3,
+              8
+            ],
+            "interpolation": "monotone",
+            "markers": []
+          },
+          "style": {
+            "color": "#6BA7FF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 1,
+            "fillColor": "#6BA7FF"
+          },
+          "zIndex": 1
+        },
+        "layer_lineChart_3a_axis_2d_value": {
+          "frame": {
+            "left": 0.027273,
+            "top": 0.054,
+            "width": 0.02,
+            "height": 0.892
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_axis_2d_base": {
+          "frame": {
+            "left": 0.035794,
+            "top": 0.939164,
+            "width": 0.961247,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_0": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.024575,
+            "height": 0.108
+          },
+          "content": {
+            "text": "8"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        },
+        "layer_lineChart_3a_value_2d_1": {
+          "frame": {
+            "left": 0,
+            "top": 0.892,
+            "width": 0.024575,
+            "height": 0.108
+          },
+          "content": {
+            "text": "3"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 0.72,
+            "opacity": 0,
+            "fontSizeRatio": 0.06,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "right",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          },
+          "zIndex": 2
+        }
+      }
+    }
+  }
+]

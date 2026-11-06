@@ -1,0 +1,103 @@
+[
+  {
+    "name": "fact sheet test vector",
+    "call": {
+      "fn": "sign",
+      "args": [
+        "1700000000000",
+        "this is secret"
+      ]
+    },
+    "expected": "sSFWELbV2YwjdDQhWZwTcWlX5BWUx5J6TPpsZmuPii0="
+  },
+  {
+    "name": "numeric timestamp signs the same",
+    "call": {
+      "fn": "sign",
+      "args": [
+        1700000000000,
+        "this is secret"
+      ]
+    },
+    "expected": "sSFWELbV2YwjdDQhWZwTcWlX5BWUx5J6TPpsZmuPii0="
+  },
+  {
+    "name": "verify accepts a fresh valid signature",
+    "call": {
+      "fn": "verifySignature",
+      "args": [
+        {
+          "timestamp": "1700000000000",
+          "signature": "sSFWELbV2YwjdDQhWZwTcWlX5BWUx5J6TPpsZmuPii0="
+        },
+        "this is secret",
+        {
+          "now": 1700000060000
+        }
+      ]
+    },
+    "expected": true
+  },
+  {
+    "name": "verify rejects a stale timestamp",
+    "call": {
+      "fn": "verifySignature",
+      "args": [
+        {
+          "timestamp": "1700000000000",
+          "signature": "sSFWELbV2YwjdDQhWZwTcWlX5BWUx5J6TPpsZmuPii0="
+        },
+        "this is secret",
+        {
+          "now": 1700000400000
+        }
+      ]
+    },
+    "expected": false
+  },
+  {
+    "name": "verify rejects a wrong secret",
+    "call": {
+      "fn": "verifySignature",
+      "args": [
+        {
+          "timestamp": "1700000000000",
+          "signature": "sSFWELbV2YwjdDQhWZwTcWlX5BWUx5J6TPpsZmuPii0="
+        },
+        "other secret",
+        {
+          "now": 1700000000000
+        }
+      ]
+    },
+    "expected": false
+  },
+  {
+    "name": "verify rejects missing headers",
+    "call": {
+      "fn": "verifySignature",
+      "args": [
+        {
+          "timestamp": null,
+          "signature": null
+        },
+        "this is secret",
+        {
+          "now": 1700000000000
+        }
+      ]
+    },
+    "expected": false
+  },
+  {
+    "name": "numeric timestamp uses binary64 shortest decimal",
+    "call": {
+      "fn": "sign",
+      "args": [
+        1000000000000000100,
+        "s"
+      ]
+    },
+    "expected": "FOh892+guydqGi09JFiJ4dMMW40JEnoMXBQ4RfJx9l4="
+  }
+]

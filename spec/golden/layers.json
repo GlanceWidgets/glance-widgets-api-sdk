@@ -1,0 +1,652 @@
+[
+  {
+    "name": "text static with explicit defaults",
+    "call": {
+      "fn": "text",
+      "args": [
+        {
+          "id": "title",
+          "frame": {
+            "left": 0.05,
+            "top": 0.05,
+            "width": 0.9,
+            "height": 0.2
+          },
+          "text": "CPU",
+          "style": {
+            "color": "#fff",
+            "verticalAlignment": "center"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:title",
+          "type": "text",
+          "dataPath": "data.layer_title"
+        }
+      ],
+      "data": {
+        "layer_title": {
+          "frame": {
+            "left": 0.05,
+            "top": 0.05,
+            "width": 0.9,
+            "height": 0.2
+          },
+          "content": {
+            "text": "CPU"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1,
+            "opacity": 0,
+            "fontSizeRatio": 0.12,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "left",
+            "verticalAlignment": "center",
+            "autoWrap": false,
+            "paddingRatio": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "text node at an explicit data path",
+    "call": {
+      "fn": "text",
+      "args": [
+        {
+          "id": "value",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.3
+          },
+          "dataPath": "data.cpu.label",
+          "text": "--",
+          "zIndex": 3
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:value",
+          "type": "text",
+          "dataPath": "data.cpu.label"
+        }
+      ],
+      "data": {
+        "cpu": {
+          "label": {
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1,
+              "height": 0.3
+            },
+            "content": {
+              "text": "--"
+            },
+            "style": {
+              "color": "#FFFFFF",
+              "textOpacity": 1,
+              "opacity": 0,
+              "fontSizeRatio": 0.12,
+              "fontWeight": "400",
+              "fontFamily": "system",
+              "letterSpacing": 0,
+              "horizontalAlignment": "left",
+              "verticalAlignment": "top",
+              "autoWrap": false,
+              "paddingRatio": 0
+            },
+            "zIndex": 3
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "horizontal line centered on y",
+    "call": {
+      "fn": "horizontalLine",
+      "args": [
+        {
+          "id": "rule",
+          "at": 0.5,
+          "from": 0.1,
+          "to": 0.9,
+          "style": {
+            "strokeWidth": 1
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:rule",
+          "type": "line",
+          "dataPath": "data.layer_rule"
+        }
+      ],
+      "data": {
+        "layer_rule": {
+          "frame": {
+            "left": 0.1,
+            "top": 0.49,
+            "width": 0.8,
+            "height": 0.02
+          },
+          "content": {
+            "direction": "horizontal"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 1,
+            "pattern": "solid",
+            "cap": "butt"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "vertical line centered on x",
+    "call": {
+      "fn": "verticalLine",
+      "args": [
+        {
+          "id": "axis",
+          "at": 0.25,
+          "from": 0,
+          "to": 1
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:axis",
+          "type": "line",
+          "dataPath": "data.layer_axis"
+        }
+      ],
+      "data": {
+        "layer_axis": {
+          "frame": {
+            "left": 0.24,
+            "top": 0,
+            "width": 0.02,
+            "height": 1
+          },
+          "content": {
+            "direction": "vertical"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "pattern": "solid",
+            "cap": "butt"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "too short line throws",
+    "call": {
+      "fn": "horizontalLine",
+      "args": [
+        {
+          "id": "rule",
+          "at": 0.5,
+          "from": 0.1,
+          "to": 0.11
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "shape fill is explicit",
+    "call": {
+      "fn": "shape",
+      "args": [
+        {
+          "id": "bg",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "style": {
+            "color": "#102030",
+            "cornerRadiusRatio": 0.2
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:bg",
+          "type": "shape",
+          "dataPath": "data.layer_bg"
+        }
+      ],
+      "data": {
+        "layer_bg": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {},
+          "style": {
+            "color": "#102030",
+            "opacity": 1,
+            "cornerRadiusRatio": 0.2,
+            "backgroundColor": "#102030"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "static icon emits the full glyph triple",
+    "call": {
+      "fn": "icon",
+      "args": [
+        {
+          "id": "i",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "glyph": {
+            "icon": "ph_activity",
+            "iconCodePoint": 57344,
+            "iconFont": "phosphorBold"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:i",
+          "type": "icon",
+          "dataPath": "data.layer_i"
+        }
+      ],
+      "data": {
+        "layer_i": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 0.2,
+            "height": 0.2
+          },
+          "content": {
+            "icon": "ph_activity",
+            "iconCodePoint": 57344,
+            "iconFont": "phosphorBold"
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "image node at an explicit data path",
+    "call": {
+      "fn": "image",
+      "args": [
+        {
+          "id": "img",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "dataPath": "data.cover",
+          "url": "data:image/png;base64,iVBORw0KGgo="
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:img",
+          "type": "image",
+          "dataPath": "data.cover"
+        }
+      ],
+      "data": {
+        "cover": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "url": "data:image/png;base64,iVBORw0KGgo="
+          },
+          "style": {
+            "opacity": 1,
+            "cornerRadiusRatio": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "curve samples with explicit color and fill",
+    "call": {
+      "fn": "curve",
+      "args": [
+        {
+          "id": "c",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "data": {
+            "points": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "yDomain": [
+              0,
+              4
+            ]
+          },
+          "style": {
+            "color": "#FF8800",
+            "fillOpacity": 0.2
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:c",
+          "type": "curve",
+          "dataPath": "data.layer_c"
+        }
+      ],
+      "data": {
+        "layer_c": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "points": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "yDomain": [
+              0,
+              4
+            ],
+            "mode": "samples",
+            "interpolation": "monotone"
+          },
+          "style": {
+            "color": "#FF8800",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0.2,
+            "plotPadding": 0,
+            "fillColor": "#FF8800"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "curve function mode without yDomain throws",
+    "call": {
+      "fn": "curve",
+      "args": [
+        {
+          "id": "c",
+          "frame": {},
+          "data": {
+            "expression": "sin(x)",
+            "domain": [
+              0,
+              6
+            ]
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "text null text is empty",
+    "call": {
+      "fn": "text",
+      "args": [
+        {
+          "id": "t",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.2
+          },
+          "text": null
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:t",
+          "type": "text",
+          "dataPath": "data.layer_t"
+        }
+      ],
+      "data": {
+        "layer_t": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.2
+          },
+          "content": {
+            "text": ""
+          },
+          "style": {
+            "color": "#FFFFFF",
+            "textOpacity": 1,
+            "opacity": 0,
+            "fontSizeRatio": 0.12,
+            "fontWeight": "400",
+            "fontFamily": "system",
+            "letterSpacing": 0,
+            "horizontalAlignment": "left",
+            "verticalAlignment": "top",
+            "autoWrap": false,
+            "paddingRatio": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "shape null backgroundColor and fillColor fall back to color",
+    "call": {
+      "fn": "shape",
+      "args": [
+        {
+          "id": "s",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.2
+          },
+          "style": {
+            "color": "#ff0000",
+            "backgroundColor": null
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:s",
+          "type": "shape",
+          "dataPath": "data.layer_s"
+        }
+      ],
+      "data": {
+        "layer_s": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.2
+          },
+          "content": {},
+          "style": {
+            "color": "#FF0000",
+            "opacity": 1,
+            "cornerRadiusRatio": 0,
+            "backgroundColor": "#FF0000"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "curve null fillColor falls back to color",
+    "call": {
+      "fn": "curve",
+      "args": [
+        {
+          "id": "c",
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.2
+          },
+          "style": {
+            "color": "#00ff00",
+            "fillColor": null
+          },
+          "data": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "layers": [
+        {
+          "id": "remote:c",
+          "type": "curve",
+          "dataPath": "data.layer_c"
+        }
+      ],
+      "data": {
+        "layer_c": {
+          "frame": {
+            "left": 0,
+            "top": 0,
+            "width": 1,
+            "height": 0.2
+          },
+          "content": {
+            "mode": "samples",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "interpolation": "monotone"
+          },
+          "style": {
+            "color": "#00FF00",
+            "opacity": 1,
+            "strokeWidth": 2,
+            "lineCap": "round",
+            "lineJoin": "round",
+            "fillOpacity": 0,
+            "plotPadding": 0,
+            "fillColor": "#00FF00"
+          }
+        }
+      }
+    }
+  }
+]

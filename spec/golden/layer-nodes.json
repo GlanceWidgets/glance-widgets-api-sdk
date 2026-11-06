@@ -1,0 +1,1135 @@
+[
+  {
+    "name": "complete text node supports numeric content and transform",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": 42
+              },
+              "transform": {
+                "translateX": 0.1,
+                "translateY": -0.2
+              }
+            }
+          }
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "name": "node null fields preserve defaults",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "rotation": null,
+              "content": {
+                "text": null
+              },
+              "style": {
+                "color": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "name": "matrix content mirrors root",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "matrix",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "pixels": [
+                  [
+                    null
+                  ]
+                ],
+                "default": {
+                  "empty": true
+                },
+                "layout": {
+                  "gapMode": "near"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "name": "scalar binding is invalid",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": "hello"
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "array binding is invalid",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": []
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "remote frame is required",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "content": {
+                "text": "hello"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "frame replaces whole and requires both dimensions",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "unknown node field is invalid",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "label": "hello"
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "content type fields are strict",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "url": "https://example.com"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "matrix style has no fields",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "matrix",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "pixels": [
+                  [
+                    null
+                  ]
+                ]
+              },
+              "style": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "matrix requires pixels",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "matrix",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "default": {
+                  "empty": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "matrix batch coordinates are checked",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "matrix",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "pixels": [
+                  [
+                    null
+                  ]
+                ],
+                "batch": [
+                  {
+                    "pixel": {},
+                    "coordinates": [
+                      [
+                        1,
+                        0
+                      ]
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "icon has one artwork source",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "icon",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "url": "https://example.com",
+                "icon": "ph_star"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "icon glyph metadata requires icon",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "icon",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "iconCodePoint": 57344
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "zIndex must be integer",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "zIndex": 1.5
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "declaration contains only three keys",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node",
+              "style": {}
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "duplicate declaration ids are invalid",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:node",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "remote id needs a name",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "gradient colors must be nonempty",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:node",
+              "type": "shape",
+              "dataPath": "data.node"
+            }
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "style": {
+                "gradientColors": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "throws": true
+  },
+  {
+    "name": "explicit prototype-named data path is an own node",
+    "call": {
+      "fn": "toResponse",
+      "args": [
+        {
+          "layers": [
+            {
+              "id": "remote:proto",
+              "type": "text",
+              "dataPath": "data.__proto__"
+            }
+          ],
+          "data": {
+            "__proto__": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": "own node"
+              },
+              "style": {}
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "protocol": 1,
+      "pixels": [
+        [
+          {
+            "empty": true
+          }
+        ]
+      ],
+      "default": {
+        "empty": true
+      },
+      "layout": {
+        "gapMode": "default",
+        "edgeInsetRatio": 0,
+        "cellAspectRatio": 1
+      },
+      "layers": [
+        {
+          "id": "remote:proto",
+          "type": "text",
+          "dataPath": "data.__proto__"
+        }
+      ],
+      "data": {
+        "__proto__": {
+          "frame": {
+            "width": 1,
+            "height": 1
+          },
+          "content": {
+            "text": "own node"
+          },
+          "style": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "null optional matrix fields use fallbacks",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "layers": [
+            {
+              "id": "remote:matrix",
+              "type": "matrix",
+              "dataPath": "data.matrix"
+            }
+          ],
+          "data": {
+            "matrix": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "pixels": [
+                  [
+                    null
+                  ]
+                ],
+                "default": null,
+                "layout": null,
+                "batch": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "name": "validates a large remote layer list",
+    "call": {
+      "fn": "validate",
+      "args": [
+        {
+          "protocol": 1,
+          "pixels": [
+            [
+              null
+            ]
+          ],
+          "data": {
+            "node": {
+              "frame": {
+                "width": 1,
+                "height": 1
+              },
+              "content": {
+                "text": "label"
+              }
+            }
+          },
+          "layers": [
+            {
+              "id": "remote:label0",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label1",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label2",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label3",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label4",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label5",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label6",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label7",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label8",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label9",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label10",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label11",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label12",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label13",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label14",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label15",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label16",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label17",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label18",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label19",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label20",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label21",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label22",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label23",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label24",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label25",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label26",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label27",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label28",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label29",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label30",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label31",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label32",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label33",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label34",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label35",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label36",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label37",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label38",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label39",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label40",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label41",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label42",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label43",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label44",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label45",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label46",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label47",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label48",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label49",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label50",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label51",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label52",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label53",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label54",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label55",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label56",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label57",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label58",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label59",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label60",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label61",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label62",
+              "type": "text",
+              "dataPath": "data.node"
+            },
+            {
+              "id": "remote:label63",
+              "type": "text",
+              "dataPath": "data.node"
+            }
+          ]
+        }
+      ]
+    },
+    "expected": null
+  }
+]
